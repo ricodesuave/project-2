@@ -3,47 +3,33 @@ package com.bookzindaclub.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
 @Entity
-@IdClass(Review.idClass.class)
 @Table(name = "review")
-public class Review {
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "user_id")
-//    private User user;
-//
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "book_id")
-//    private Book book;
+public class Review
+{
+    @EmbeddedId
+    private ReviewIdentity reviewIdentity;
 
-    @Id
-    private int userId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @MapsId("userId")
+    private User user;
 
-    @Id
-    private int bookId;
-
-    public Review(int userId, int bookId)
-    {
-        this.userId = userId;
-        this.bookId = bookId;
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @MapsId("bookId")
+    private Book book;
 
     @Column(name = "review_description")
     private String reviewDescription;
 
     private int rating;
 
-    @Column(name = "review_")
+    @Column(name = "review_date")
     private String reviewDate;
 
-    static class idClass implements Serializable
-    {
-        private int userId;
-        private int bookId;
-    }
 }
