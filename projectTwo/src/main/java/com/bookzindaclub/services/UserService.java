@@ -11,7 +11,6 @@ public interface UserService
     void save (User user);
     void update(User user);
     void delete(User user);
-
     User getByFirstName(String firstName);
     User getByLastName(String lastName);
     User getByEmail(String email);
