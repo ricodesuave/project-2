@@ -9,8 +9,8 @@ public interface ReviewService
 {
     Review getById(ReviewIdentity reviewIdentity);
     List<Review> getAll();
+
     void save(Review review);
     void update(Review review);
     void delete(Review review);
-
 }
