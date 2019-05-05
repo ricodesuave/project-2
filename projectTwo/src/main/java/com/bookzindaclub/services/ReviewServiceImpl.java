@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class ReviewServiceImpl implements ReviewService {
-
+public class ReviewServiceImpl implements ReviewService
+{
     ReviewRepo reviewRepo;
 
     @Autowired
