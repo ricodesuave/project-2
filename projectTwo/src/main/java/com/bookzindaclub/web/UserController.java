@@ -1,4 +1,6 @@
 package com.bookzindaclub.web;
 
-public class UserController {
+public class UserController
+{
+
 }
