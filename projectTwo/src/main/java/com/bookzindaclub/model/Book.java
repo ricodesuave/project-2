@@ -9,10 +9,15 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 @EqualsAndHashCode
 @Entity
 @Table(name = "BOOKS")
 public class Book {
+    public Book(String title, String author){
+        this.title= title;
+        this.author= author;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookId;

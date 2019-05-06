@@ -2,7 +2,7 @@ spring:
   application:
     name: Bookzindaclub
   datasource:
-    url: jdbc:postgreSQL://project2db.c36ta8kttd49.us-east-1.rds.amazonaws.com:5432/project2db
+    url: jdbc:postgresql://project2db.c36ta8kttd49.us-east-1.rds.amazonaws.com:5432/project2db
     username: fdetorres
     password: p4ssw0rd
     driver-class-name: org.postgresql.Driver
@@ -10,8 +10,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
-        jdbc:
-          lob:
-            non_contextual_creation: true
+        jdbcUrl: url
 server:
   port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
