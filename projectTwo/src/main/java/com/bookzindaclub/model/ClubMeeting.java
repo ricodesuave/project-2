@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Table(name = "CLUBMEETING")
 public class ClubMeeting {
     @EmbeddedId
-    private ClubMeetingIdentity id;
+    private ClubMeetingIdentity clubMeetingIdentity;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("clubId")

@@ -34,7 +34,8 @@ public class ClubMeetingServiceImpl implements ClubMeetingService {
 
     @Override
     public List<ClubMeeting> getAllFromClub(int id) {
-        return this.clubMeetingRepo.findAllByClubIdEquals(id);
+        //return this.clubMeetingRepo.findAllByClubIdEquals(id);
+        return null;
     }
 
     @Override

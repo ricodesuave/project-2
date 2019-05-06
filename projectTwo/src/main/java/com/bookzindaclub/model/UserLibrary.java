@@ -2,9 +2,9 @@ package com.bookzindaclub.model;
 
 
 import lombok.*;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -26,8 +26,8 @@ public class UserLibrary {
     @MapsId("bookId")
     private Book book;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "PROGRESS_ID")
-    private int progressId;
+    private Progress progress;
 
 }

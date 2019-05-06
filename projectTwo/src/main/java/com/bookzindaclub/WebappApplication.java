@@ -28,7 +28,7 @@ public class WebappApplication {
 //    }
 
     @Bean
-    CommandLineRunner init(BookRepo bookRepo){
+    CommandLineRunner initial(BookRepo bookRepo){
         System.out.println("hello");
         return args-> {
             Stream.of("Harry Potter", "War and Peace", "To Kill a Mockingbird", "Tom Sawyer")
