@@ -20,6 +20,7 @@ public class User
     private int userId;
 
     private String email;
+
     private String password;
 
     @Column(name = "first_name")

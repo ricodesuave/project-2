@@ -1,6 +1,49 @@
 package com.bookzindaclub.web;
 
+import com.bookzindaclub.model.User;
+import com.bookzindaclub.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
 public class UserController
 {
+    private UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService){this.userService = userService;}
+
+    //Get by ID
+    @GetMapping("user")
+    public User user(User user){ return userService.getById(user.getUserId());}
+
+    //Get all users
+    @GetMapping("users")
+    public List<User> getUsers(){return userService.getAll(); }
+
+    //Save user
+    @PostMapping("save")
+    public void save(User user){userService.save(user);}
+
+    @PutMapping("update")
+    public void update(User user){userService.save(user);}
+
+    //delete user by id
+    @DeleteMapping("delete")
+    public void delete(@RequestBody User user){userService.delete(user);}
+
+    //Get user by first name
+    @GetMapping("firstname")
+    public User getByFirstName(@RequestBody User user){return userService.getByFirstName(user.getFirstName());}
+
+    //Get user by last name
+    @GetMapping("lastname")
+    public User getByLastName(@RequestBody User user){return userService.getByLastName(user.getLastName());}
+
+    //get single user by email
+    @PostMapping("email")
+    public User getUserByEmail(@RequestBody User user){return userService.getByEmail(user.getEmail());}
 
 }
