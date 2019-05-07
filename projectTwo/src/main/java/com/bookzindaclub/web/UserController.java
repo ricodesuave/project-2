@@ -18,7 +18,7 @@ public class UserController
 
     //Get by ID
     @GetMapping("user")
-    public User user(User user){ return userService.getById(user.getUserId());}
+    public User user(@RequestParam int userId){ return userService.getById(userId);}
 
     //Get all users
     @GetMapping("users")
@@ -26,11 +26,11 @@ public class UserController
 
     //Save user
     @PostMapping("save")
-    public void save(User user){userService.save(user);}
+    public void save(@RequestBody User user){userService.save(user);}
 
     //Update user
     @PutMapping("update")
-    public void update(User user){userService.update(user);}
+    public void update(@RequestBody User user){userService.update(user);}
 
     //delete user by id
     @DeleteMapping("delete")

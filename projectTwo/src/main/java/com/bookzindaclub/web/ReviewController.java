@@ -27,15 +27,15 @@ public class ReviewController {
     {return reviewService.getAll();}
 
     @PostMapping("save")
-    public void save(Review review)
+    public void save(@RequestBody Review review)
     {reviewService.save(review);}
 
     @PutMapping("update")
-    public void update(Review review)
+    public void update(@RequestBody Review review)
     {reviewService.update(review);}
 
     @DeleteMapping("delete")
-    public void delete(Review review)
+    public void delete(@RequestBody Review review)
     {reviewService.delete(review);}
 
 }
