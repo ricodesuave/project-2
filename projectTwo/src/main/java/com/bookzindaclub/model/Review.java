@@ -1,6 +1,7 @@
 package com.bookzindaclub.model;
 
 import lombok.*;
+import org.springframework.jmx.export.annotation.ManagedOperation;
 
 import javax.persistence.*;
 
@@ -10,19 +11,11 @@ import javax.persistence.*;
 @Setter
 @EqualsAndHashCode
 @Entity
-@Table(name = "review")
+@Table(name = "review", schema = "public")
 public class Review
 {
     @EmbeddedId
     private ReviewIdentity reviewIdentity;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("userId")
-    private User user;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("bookId")
-    private Book book;
 
     @Column(name = "review_description")
     private String reviewDescription;

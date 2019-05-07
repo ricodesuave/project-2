@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/review")
 public class ReviewController {
 
     private ReviewService reviewService;
@@ -21,7 +22,7 @@ public class ReviewController {
 
     @GetMapping("reviews")
     public List<Review> getAll(){return reviewService.getAll();}
-    
+
     @PostMapping("save")
     public void save(Review review){reviewService.save(review);}
 

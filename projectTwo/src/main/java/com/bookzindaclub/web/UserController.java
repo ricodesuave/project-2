@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/user")
 public class UserController
 {
     private UserService userService;
@@ -27,6 +28,7 @@ public class UserController
     @PostMapping("save")
     public void save(User user){userService.save(user);}
 
+    //Update user
     @PutMapping("update")
     public void update(User user){userService.save(user);}
 

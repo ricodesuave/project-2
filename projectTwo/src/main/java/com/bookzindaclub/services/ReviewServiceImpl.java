@@ -4,11 +4,13 @@ import com.bookzindaclub.data.ReviewRepo;
 import com.bookzindaclub.model.Review;
 import com.bookzindaclub.model.ReviewIdentity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class ReviewServiceImpl implements ReviewService
 {
     ReviewRepo reviewRepo;
@@ -28,6 +30,13 @@ public class ReviewServiceImpl implements ReviewService
     @Override
     public List<Review> getAll()
     {
+        System.out.println("hello");
+
+        List<Review> reviews = this.reviewRepo.findAll();
+
+        for(int i = 0; i < reviews.size(); i++)
+            System.out.println(reviews.get(i));
+
         return this.reviewRepo.findAll();
     }
 
