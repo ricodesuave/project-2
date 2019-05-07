@@ -8,8 +8,8 @@ import java.util.List;
 public interface ClubMemberService {
     ClubMember getById(ClubMemberIdentity id);
     List<ClubMember> getAll();
-    List<ClubMember> getAllByClub(int clubId);
-    void newClubMeeting(ClubMember clubMember);
-    void deleteClubMeeting(ClubMember clubMember);
-    void updateClubMeeting(ClubMember clubMember);
+    List<ClubMember> getAllFromClub(int clubId);
+    void newClubMember(ClubMember clubMember);
+    void deleteClubMember(ClubMember clubMember);
+    void updateClubMember(ClubMember clubMember);
 }

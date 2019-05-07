@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ClubMeetingRepo extends JpaRepository<ClubMeeting, ClubMeetingIdentity> {
-    //List<ClubMeeting> findAllByClubIdEquals(int clubId);
+    List<ClubMeeting> findAllByClubMeetingIdentity_ClubId(int clubId);
 }

@@ -17,9 +17,9 @@ public class ClubMeeting {
     @EmbeddedId
     private ClubMeetingIdentity clubMeetingIdentity;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("clubId")
-    private Club club;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @MapsId("clubId")
+//    private Club club;
 
 
     private String location;

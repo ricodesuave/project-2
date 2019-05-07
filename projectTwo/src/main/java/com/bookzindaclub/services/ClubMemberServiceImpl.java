@@ -4,6 +4,7 @@ import com.bookzindaclub.data.ClubMemberRepo;
 import com.bookzindaclub.model.ClubMember;
 import com.bookzindaclub.model.ClubMemberIdentity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Service
 public class ClubMemberServiceImpl implements ClubMemberService{
-    ClubMemberRepo clubMemberRepo;
+    private ClubMemberRepo clubMemberRepo;
 
     @Autowired
     public void setClubMemberRepo(ClubMemberRepo clubMemberRepo){
@@ -31,23 +32,22 @@ public class ClubMemberServiceImpl implements ClubMemberService{
     }
 
     @Override
-    public List<ClubMember> getAllByClub(int clubId) {
-        //return this.clubMemberRepo.findAllByClubIdEquals(clubId);
-        return null;
+    public List<ClubMember> getAllFromClub(int clubId) {
+        return this.clubMemberRepo.findAllByClubMemberIdentity_ClubIdEquals(clubId);
     }
 
     @Override
-    public void newClubMeeting(ClubMember clubMember) {
+    public void newClubMember(ClubMember clubMember) {
         this.clubMemberRepo.save(clubMember);
     }
 
     @Override
-    public void deleteClubMeeting(ClubMember clubMember) {
+    public void deleteClubMember(ClubMember clubMember) {
         this.clubMemberRepo.delete(clubMember);
     }
 
     @Override
-    public void updateClubMeeting(ClubMember clubMember) {
+    public void updateClubMember(ClubMember clubMember) {
         this.clubMemberRepo.save(clubMember);
     }
 }
