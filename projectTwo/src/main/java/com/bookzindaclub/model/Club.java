@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CLUB_ID")
     private int clubId;
 
     private String clubName;
