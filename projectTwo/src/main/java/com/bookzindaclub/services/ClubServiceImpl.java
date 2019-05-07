@@ -39,7 +39,7 @@ public class ClubServiceImpl implements ClubService {
 
     @Override
     public List<Club> getAllByOwner(int ownerId) {
-        return this.clubRepo.findAllByOwnerIdEquals(ownerId);
+        return this.clubRepo.findAllByOwnerEquals(ownerId);
     }
 
     @Override
