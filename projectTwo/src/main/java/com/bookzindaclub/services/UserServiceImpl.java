@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
     public User getById(int id) {
-        return this.userRepo.getOne(id);
+        return this.userRepo.findById(id).orElse(null);
     }
 
     //Get all users

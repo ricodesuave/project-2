@@ -1,6 +1,7 @@
 package com.bookzindaclub.web;
 
 import com.bookzindaclub.model.Review;
+import com.bookzindaclub.model.ReviewIdentity;
 import com.bookzindaclub.services.ReviewService;
 import com.bookzindaclub.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/review")
+@RequestMapping("/review")
 public class ReviewController {
 
     private ReviewService reviewService;
@@ -18,18 +19,23 @@ public class ReviewController {
     public void setReviewService(ReviewService reviewService){this.reviewService = reviewService;}
 
     @GetMapping("review")
-    public Review getById(Review review){return reviewService.getById(review.getReviewIdentity());}
+    public Review getById(@RequestParam int userId, @RequestParam int bookId)
+    {return reviewService.getById(new ReviewIdentity(userId,bookId));}
 
     @GetMapping("reviews")
-    public List<Review> getAll(){return reviewService.getAll();}
+    public List<Review> getAll()
+    {return reviewService.getAll();}
 
     @PostMapping("save")
-    public void save(Review review){reviewService.save(review);}
+    public void save(Review review)
+    {reviewService.save(review);}
 
     @PutMapping("update")
-    public void update(Review review){reviewService.update(review);}
+    public void update(Review review)
+    {reviewService.update(review);}
 
     @DeleteMapping("delete")
-    public void delete(Review review){reviewService.delete(review);}
+    public void delete(Review review)
+    {reviewService.delete(review);}
 
 }

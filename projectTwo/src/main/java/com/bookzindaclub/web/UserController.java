@@ -30,7 +30,7 @@ public class UserController
 
     //Update user
     @PutMapping("update")
-    public void update(User user){userService.save(user);}
+    public void update(User user){userService.update(user);}
 
     //delete user by id
     @DeleteMapping("delete")

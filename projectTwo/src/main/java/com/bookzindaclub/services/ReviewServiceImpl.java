@@ -24,19 +24,11 @@ public class ReviewServiceImpl implements ReviewService
     @Override
     @Transactional(readOnly=true, isolation= Isolation.READ_COMMITTED)
     public Review getById(ReviewIdentity reviewIdentity) {
-        return this.reviewRepo.getOne(reviewIdentity);
+        return this.reviewRepo.findById(reviewIdentity).orElse(null);
     }
 
     @Override
-    public List<Review> getAll()
-    {
-        System.out.println("hello");
-
-        List<Review> reviews = this.reviewRepo.findAll();
-
-        for(int i = 0; i < reviews.size(); i++)
-            System.out.println(reviews.get(i));
-
+    public List<Review> getAll(){
         return this.reviewRepo.findAll();
     }
 
