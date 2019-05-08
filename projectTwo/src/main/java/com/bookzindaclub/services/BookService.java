@@ -11,6 +11,7 @@ public interface BookService {
    List<Book> getAllByTitle(String title);
    List<Book> getAllByAuthor();
    int newBook(Book b);
+   void updateOne(Book b);
    void deleteBook(Book b);
    void deleteAll();
 }
