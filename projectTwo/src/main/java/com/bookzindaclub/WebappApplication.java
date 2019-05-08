@@ -27,17 +27,17 @@ public class WebappApplication {
 //        this.bookRepo= bookRepo;
 //    }
 
-    @Bean
-    CommandLineRunner initial(BookRepo bookRepo){
-        System.out.println("hello");
-        return args-> {
-            Stream.of("Harry Potter", "War and Peace", "To Kill a Mockingbird", "Tom Sawyer")
-                    .forEach(title -> {
-                        Book book = new Book(title, "author");
-                        bookRepo.save(book);
-                    });
-            bookRepo.findAll().forEach(System.out::println);
-        };
-    }
+//    @Bean
+//    CommandLineRunner initial(BookRepo bookRepo){
+//        System.out.println("hello");
+//        return args-> {
+//            Stream.of("Harry Potter", "War and Peace", "To Kill a Mockingbird", "Tom Sawyer")
+//                    .forEach(title -> {
+//                        Book book = new Book(title, "author");
+//                        bookRepo.save(book);
+//                    });
+//            bookRepo.findAll().forEach(System.out::println);
+//        };
+//    }
 
 }
