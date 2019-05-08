@@ -11,7 +11,7 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User
 {
     @Id
@@ -20,6 +20,7 @@ public class User
     private int userId;
 
     private String email;
+
     private String password;
 
     @Column(name = "first_name")

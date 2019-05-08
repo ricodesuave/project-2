@@ -2,7 +2,9 @@ package com.bookzindaclub.model;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 

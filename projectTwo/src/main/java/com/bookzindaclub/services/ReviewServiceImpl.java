@@ -4,13 +4,15 @@ import com.bookzindaclub.data.ReviewRepo;
 import com.bookzindaclub.model.Review;
 import com.bookzindaclub.model.ReviewIdentity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class ReviewServiceImpl implements ReviewService {
-
+@Service
+public class ReviewServiceImpl implements ReviewService
+{
     ReviewRepo reviewRepo;
 
     @Autowired
@@ -22,12 +24,11 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     @Transactional(readOnly=true, isolation= Isolation.READ_COMMITTED)
     public Review getById(ReviewIdentity reviewIdentity) {
-        return this.reviewRepo.getOne(reviewIdentity);
+        return this.reviewRepo.findById(reviewIdentity).orElse(null);
     }
 
     @Override
-    public List<Review> getAll()
-    {
+    public List<Review> getAll(){
         return this.reviewRepo.findAll();
     }
 
