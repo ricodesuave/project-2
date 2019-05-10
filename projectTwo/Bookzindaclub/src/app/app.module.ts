@@ -17,12 +17,15 @@ import { AppComponent } from './app.component';
 import { ClubCreationFormComponent } from './components/club-creation-form/club-creation-form.component';
 import { ClubServiceService } from './services/club-service.service';
 
-
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserPostComponent } from './components/user-post/user-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClubCreationFormComponent
+    ClubCreationFormComponent,
+    NavbarComponent,
+    UserPostComponent
   ],
   imports: [
     BrowserModule,

@@ -36,10 +36,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
 
 
 
-var routes = [];
+
+var routes = [
+    { path: 'posts', component: _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__["UserPostComponent"] }
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -74,7 +78,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    {{ title }}!\r\n  </h1>\r\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\r\n</div>\r\n<app-club-creation-form></app-club-creation-form>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<!-- \r\n\r\n<router-outlet></router-outlet> -->\r\n<app-navbar></app-navbar>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"card bg-dark my-5\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"text-center list-inline py-3\">\r\n            <li class=\"list-inline-item\"><a routerLink=\"/posts\" class=\"btn btn-info\">List Reviews</a></li>\r\n            </ul>\r\n        </div>\r\n        </div>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -94,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Bookzindaclub';
+        this.title = 'test';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -135,6 +139,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/club-creation-form/club-creation-form.component */ "./src/app/components/club-creation-form/club-creation-form.component.ts");
 /* harmony import */ var _services_club_service_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/club-service.service */ "./src/app/services/club-service.service.ts");
+/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
+
+
 
 
 
@@ -157,7 +165,9 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_9__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
-                _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__["ClubCreationFormComponent"]
+                _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__["ClubCreationFormComponent"],
+                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
+                _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__["UserPostComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -201,7 +211,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Club Creation Form</h1>\n<form [formGroup]=\"clubFormGroup\">\n    <input type=\"hidden\" formControlName=\"ownerId\" value=\"9001\" readonly/>\n\n    <mat-form-field appearance=\"outline\">\n        <mat-label>Club Name</mat-label>\n        <input matInput type=\"text\" placeholder=\"Enter Club Name\" [(ngModel)]=\"value\" formControlName=\"clubName\"/>\n        <button mat-button *ngIf=\"value\" matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"value=''\">\n            <mat-icon>close</mat-icon>\n        </button>\n    </mat-form-field>\n\n    <br>\n\n    <mat-form-field appearance=\"outline\">\n        <textarea matInput name=\"\" id=\"\" formControlName=\"clubDescription\"></textarea>\n        <!-- <textarea matInput placeholder=\"Enter Club Name\" formControlName=\"clubDescription\"></textarea> -->\n    </mat-form-field>\n\n    \n    <div>\n        <button type=\"button\" (click)=\"createClub()\">Create</button>\n    </div>\n\n    \n</form>\n"
+module.exports = "<h1>Club Creation Form</h1>\r\n<form [formGroup]=\"clubFormGroup\">\r\n    <input type=\"hidden\" formControlName=\"ownerId\" value=\"9001\" readonly/>\r\n\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Club Name</mat-label>\r\n        <input matInput type=\"text\" placeholder=\"Enter Club Name\" [(ngModel)]=\"value\" formControlName=\"clubName\"/>\r\n        <button mat-button *ngIf=\"value\" matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"value=''\">\r\n            <mat-icon>close</mat-icon>\r\n        </button>\r\n    </mat-form-field>\r\n\r\n    <br>\r\n\r\n    <mat-form-field appearance=\"outline\">\r\n        <textarea matInput name=\"\" id=\"\" formControlName=\"clubDescription\"></textarea>\r\n        <!-- <textarea matInput placeholder=\"Enter Club Name\" formControlName=\"clubDescription\"></textarea> -->\r\n    </mat-form-field>\r\n\r\n    \r\n    <div>\r\n        <button type=\"button\" (click)=\"createClub()\">Create</button>\r\n    </div>\r\n\r\n    \r\n</form>\r\n"
 
 /***/ }),
 
@@ -258,6 +268,125 @@ var ClubCreationFormComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_3__["ClubServiceService"]])
     ], ClubCreationFormComponent);
     return ClubCreationFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/navbar/navbar.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/navbar/navbar.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/navbar/navbar.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/navbar/navbar.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n  <a class=\"navbar-brand\" routerLink=\"/\">Bookz In Da Club</a>\r\n\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li ngbDropdown class=\"nav-item dropdown\">\r\n        <span ngbDropdownToggle class=\"nav-link dropdown-toggle\" id=\"dropdown01\">Dropdown</span>\r\n        <div ngbDropdownMenu class=\"dropdown-menu\" aria-labelledby=\"dropdown01\">\r\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" routerLink=\"/login\">Login</a>\r\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" routerLink=\"/register\">Register</a>\r\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" routerLink=\"/\">My Profile</a>\r\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>"
+
+/***/ }),
+
+/***/ "./src/app/components/navbar/navbar.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/navbar/navbar.component.ts ***!
+  \*******************************************************/
+/*! exports provided: NavbarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var NavbarComponent = /** @class */ (function () {
+    function NavbarComponent() {
+    }
+    NavbarComponent.prototype.ngOnInit = function () {
+    };
+    NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-navbar',
+            template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html"),
+            styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/components/navbar/navbar.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], NavbarComponent);
+    return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/user-post/user-post.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/user-post/user-post.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1wb3N0L3VzZXItcG9zdC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/user-post/user-post.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/user-post/user-post.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card my-5\">\r\n  <div class=\"card-body\">\r\n    <table class=\"table table-bordered table-striped\">\r\n      <thead class=\"thead-dark\">\r\n        <tr>\r\n          <th scope=\"col\">User Id</th>\r\n          <th scope=\"col\">Book Id</th>\r\n          <th scope=\"col\">Description</th>\r\n          <th scope=\"col\">Rating</th>\r\n          <th scope=\"col\">Date</th>\r\n        </tr>\r\n      </thead>\r\n\r\n      <tbody>\r\n        <tr *ngFor=\"let review of reviews\">\r\n          <td>{{ review.userId }}</td>\r\n          <td>{{ review.bookId }}</td>\r\n          <td>{{ review.reviewDescription }}</td>\r\n          <td>{{ review.rating }}</td>\r\n          <td>{{ review.reviewDate }}</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/user-post/user-post.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/user-post/user-post.component.ts ***!
+  \*************************************************************/
+/*! exports provided: UserPostComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserPostComponent", function() { return UserPostComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_reviews_reviews_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reviews/reviews.service */ "./src/app/services/reviews/reviews.service.ts");
+
+
+
+var UserPostComponent = /** @class */ (function () {
+    function UserPostComponent(reviewService) {
+        this.reviewService = reviewService;
+    }
+    UserPostComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reviewService.getAll().subscribe(function (data) {
+            _this.reviews = data;
+        });
+    };
+    UserPostComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-user-post',
+            template: __webpack_require__(/*! ./user-post.component.html */ "./src/app/components/user-post/user-post.component.html"),
+            styles: [__webpack_require__(/*! ./user-post.component.css */ "./src/app/components/user-post/user-post.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_reviews_reviews_service__WEBPACK_IMPORTED_MODULE_2__["ReviewsService"]])
+    ], UserPostComponent);
+    return UserPostComponent;
 }());
 
 
@@ -352,6 +481,56 @@ var ClubServiceService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/reviews/reviews.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/reviews/reviews.service.ts ***!
+  \*****************************************************/
+/*! exports provided: ReviewsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsService", function() { return ReviewsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var ReviewsService = /** @class */ (function () {
+    function ReviewsService(http) {
+        this.http = http;
+    }
+    ReviewsService.prototype.getAll = function () {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/review/reviews");
+    };
+    ReviewsService.prototype.getById = function () {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/review/review");
+    };
+    ReviewsService.prototype.save = function (review) {
+        this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/review/save", review);
+    };
+    ReviewsService.prototype.update = function (review) {
+        this.http.put(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/review/update", review);
+    };
+    ReviewsService.prototype.delete = function (review) {
+        this.http.delete(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/review/delete");
+    };
+    ReviewsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ReviewsService);
+    return ReviewsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.prod.ts":
 /*!**********************************************!*\
   !*** ./src/environments/environment.prod.ts ***!
@@ -387,7 +566,7 @@ __webpack_require__.r(__webpack_exports__);
 //Mock data with JSON-SERVER
 var environment = {
     production: false,
-    baseUrl: "http://localhost:3000/"
+    baseUrl: 'http://localhost:8080'
 };
 /*
  * For easier debugging in development mode, you can import the following file

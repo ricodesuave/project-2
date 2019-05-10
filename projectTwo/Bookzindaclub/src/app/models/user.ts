@@ -5,6 +5,6 @@ export class User {
         public password: string,
         public firstName: string,
         public lastName: string,
-        public dateOfBirth: Date
+        public dateOfBirth: string
     ) {}
 }
