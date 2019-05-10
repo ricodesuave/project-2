@@ -19,13 +19,15 @@ import { ClubServiceService } from './services/club-service.service';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserPostComponent } from './components/user-post/user-post.component';
+import { ClubLookupComponent } from './components/club-lookup/club-lookup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClubCreationFormComponent,
     NavbarComponent,
-    UserPostComponent
+    UserPostComponent,
+    ClubLookupComponent
   ],
   imports: [
     BrowserModule,

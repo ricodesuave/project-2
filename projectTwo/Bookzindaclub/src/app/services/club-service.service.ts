@@ -11,6 +11,10 @@ export class ClubServiceService {
 
   constructor(private http: HttpClient) { }
 
+  public findAll(): Observable<Club[]> {
+    return this.http.get<Club[]>(`${envir.baseUrl}/clubs/clubs`);
+  }
+
   save(club: Club): Observable<Club>{
     return this.http.post<Club>(`${envir.baseUrl}/clubs/save`, club);
   }
