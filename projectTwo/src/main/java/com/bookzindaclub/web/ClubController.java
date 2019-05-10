@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping(value = "/clubs")
 public class ClubController {
     private ClubService clubService;
 
@@ -22,7 +23,7 @@ public class ClubController {
         return clubService.getById(id);
     }
 
-    @GetMapping("/club/name")
+    @GetMapping("/name")
     public Club getClubByName(@RequestParam String name){
         return clubService.getByName(name);
     }
@@ -32,24 +33,25 @@ public class ClubController {
         return clubService.getAll();
     }
 
-    @GetMapping("/clubs/owner")
+    @GetMapping("/owner")
     public List<Club>  getUsersClubs(@RequestParam int ownerId ){
         return clubService.getAllByOwner(ownerId);
     }
 
-    @PostMapping("/club")
+    @PostMapping("/save")
     public Club insertClub(@RequestBody Club club){
+        System.out.println(club);
         int id = clubService.newClub(club);
         club.setClubId(id);
         return club;
     }
 
-    @DeleteMapping("/club")
+    @DeleteMapping("/delete")
     public void  deleteClub(@RequestBody Club club){
         clubService.deleteClub(club);
     }
 
-    @PutMapping("/club")
+    @PutMapping("/update")
     public void updateClub(@RequestBody Club club){
         clubService.updateClub(club);
     }

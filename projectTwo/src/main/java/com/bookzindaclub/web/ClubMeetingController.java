@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/clubmeetings")
 public class ClubMeetingController {
     private ClubMeetingService clubMeetingService;
 
@@ -28,23 +29,23 @@ public class ClubMeetingController {
         return clubMeetingService.getAll();
     }
 
-    @GetMapping("/clubmeetings/club")
+    @GetMapping("/club")
     public List<ClubMeeting> getClubMeetingsOfClub(@RequestParam int clubId){
         return clubMeetingService.getAllFromClub(clubId);
     }
 
-    @PostMapping("/clubmeeting")
+    @PostMapping("/save")
     public ClubMeeting insertClub(@RequestBody ClubMeeting clubMeeting){
         clubMeetingService.newClubMeeting(clubMeeting);
         return clubMeeting;
     }
 
-    @DeleteMapping("/clubmeeting")
+    @DeleteMapping("/delete")
     public void  deleteClub(@RequestBody ClubMeeting clubMeeting){
         clubMeetingService.deleteClubMeeting(clubMeeting);
     }
 
-    @PutMapping("/clubmeeting")
+    @PutMapping("/update")
     public void updateClub(@RequestBody ClubMeeting clubMeeting){
         clubMeetingService.updateClubMeeting(clubMeeting);
     }
