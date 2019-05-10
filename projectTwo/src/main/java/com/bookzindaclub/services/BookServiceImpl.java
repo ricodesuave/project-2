@@ -12,8 +12,6 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService{
 
-
-
     BookRepo bookRepo;
 
     @Autowired
@@ -54,6 +52,7 @@ public class BookServiceImpl implements BookService{
         return book.getBookId();
     }
 
+
     @Override
     public void deleteBook(Book b) {
         this.bookRepo.delete(b);
@@ -62,5 +61,10 @@ public class BookServiceImpl implements BookService{
     @Override
     public void deleteAll() {
         this.bookRepo.deleteAll();
+    }
+
+    @Override
+    public void updateOne(Book b) {
+        this.bookRepo.save(b);
     }
 }
