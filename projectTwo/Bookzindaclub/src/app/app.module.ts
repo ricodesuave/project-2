@@ -8,6 +8,8 @@ import { UserPostComponent } from './components/user-post/user-post.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { ReviewsService } from './services/reviews/reviews.service'
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ReviewsService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
