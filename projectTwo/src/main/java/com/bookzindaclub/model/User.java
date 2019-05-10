@@ -30,5 +30,5 @@ public class User
     private String lastName;
 
     @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+    private String dateOfBirth;
 }
