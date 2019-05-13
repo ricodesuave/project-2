@@ -21,15 +21,20 @@ export class UserService {
   }
 
   save(user: User) {
-    this.http.post<User>(`${envir.baseUrl}/user/save`, user);
+    return this.http.post<User>(`${envir.baseUrl}/user/save`, user);
   }
 
   update(user: User) {
-    this.http.put<User>(`${envir.baseUrl}/user/update`, user);
+    return this.http.put<User>(`${envir.baseUrl}/user/update`, user);
   }
 
   delete(user: User) {
-    this.http.delete<User>(`${envir.baseUrl}/user/delete`);
+    return this.http.delete<User>(`${envir.baseUrl}/user/delete`);
+  }
+
+  register(user: User) {
+    console.log('Service: Register');
+    return this.http.post<User>(`${envir.baseUrl}/user/save`, user);
   }
 }
 

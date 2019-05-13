@@ -1,5 +1,7 @@
 <div class="card my-5">
   <div class="card-body">
+    <div>
+    </div>
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
@@ -10,7 +12,6 @@
           <th scope="col">Date</th>
         </tr>
       </thead>
-
       <tbody>
         <tr *ngFor="let review of reviews">
           <td>{{ review.userId }}</td>
@@ -20,6 +21,8 @@
           <td>{{ review.reviewDate }}</td>
         </tr>
       </tbody>
-    </table>
+      </table>
   </div>
 </div>
+
+

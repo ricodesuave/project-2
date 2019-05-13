@@ -1,23 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" routerLink="/">Bookz In Da Club</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+  <a class="navbar-brand" routerLink="/">Bookz In Da Club </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li>
+        <a *ngIf="currentUser" class="nav-link">Books<span class ="sr-only">(current)</span></a>
+      </li>
+      <li>
+        <a a *ngIf="currentUser" class="nav-link">Clubs<span class="sr-only">(current)</span></a>
+      </li>
       <li ngbDropdown class="nav-item dropdown">
-        <span ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01">Dropdown</span>
+        <span ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01">Setting</span>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a *ngIf="currentUser" class="dropdown-item" routerLink="/login">Login</a>
-          <a *ngIf="currentUser" class="dropdown-item" routerLink="/register">Register</a>
-          <a *ngIf="currentUser" class="dropdown-item" routerLink="/">My Profile</a>
+          <a *ngIf="!currentUser" class="dropdown-item" routerLink="/login">Login</a>
+          <a *ngIf="!currentUser" class="dropdown-item" routerLink="/register">Register</a>
           <a *ngIf="currentUser" class="dropdown-item" (click)="logout()">Logout</a>
         </div>
+      </li>
+      <li>
       </li>
     </ul>
   </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControlName, FormControl, Validators } from '@angular/forms'
+import { FormGroup, FormControlName, FormControl, Validators } from '@angular/forms';
 import { ClubServiceService } from 'src/app/services/club-service.service';
 import { Club } from 'src/app/models/club';
 import { User } from 'src/app/models/user';
@@ -25,17 +25,17 @@ export class ClubCreationFormComponent implements OnInit {
     });
   }
 
-  createClub(){
-    const input = {...this.clubFormGroup.value};
-    console.log(input);
-    const testUser: User = new User(9001, 'jose1@gmail.com', '123', 'jose', 'nunez', null);
+  createClub() {
+    // const input = {...this.clubFormGroup.value};
+    // console.log(input);
+    // const testUser: User = new User(9001, 'jose1@gmail.com', '123', 'jose', 'nunez', null);
 
-    let val: Club = new Club(0, input.clubName, input.clubDescription, testUser);
-    console.log(val);
+    // let val: Club = new Club(0, input.clubName, input.clubDescription, testUser);
+    // console.log(val);
 
-    this.clubService.save(val).subscribe(data => {
-      console.log(data);
-    })
+    // this.clubService.save(val).subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
 }

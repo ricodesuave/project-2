@@ -1,6 +1,7 @@
 package com.bookzindaclub.services;
 
 import com.bookzindaclub.data.UserRepo;
+import com.bookzindaclub.model.Credentials;
 import com.bookzindaclub.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,5 +72,26 @@ public class UserServiceImpl implements UserService
     public User getByEmail(String email)
     {
         return this.userRepo.getByEmail(email);
+    }
+
+    //Authenticate Login
+    @Override
+    public User authenticateUsingCredentials(User input) {
+        System.out.println("Creating User Object");
+
+        System.out.println(input.getEmail());
+        System.out.println(input.getPassword());
+
+        User user = this.userRepo.getByEmailAndPassword(input.getEmail(), input.getPassword());
+
+        System.out.println("User Object Completed");
+
+        System.out.println(user);
+
+        if(user.getEmail().equals(input.getEmail()) && user.getPassword().equals(input.getPassword())){
+            return user;
+        }
+
+        return null;
     }
 }

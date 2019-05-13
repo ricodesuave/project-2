@@ -1,5 +1,6 @@
 package com.bookzindaclub.services;
 
+import com.bookzindaclub.model.Credentials;
 import com.bookzindaclub.model.User;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface UserService
     User getByFirstName(String firstName);
     User getByLastName(String lastName);
     User getByEmail(String email);
+
+    User authenticateUsingCredentials(User user);
 
 }

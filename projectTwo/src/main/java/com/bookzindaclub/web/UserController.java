@@ -47,5 +47,4 @@ public class UserController
     //get single user by email
     @PostMapping("email")
     public User getUserByEmail(@RequestBody User user){return userService.getByEmail(user.getEmail());}
-
 }

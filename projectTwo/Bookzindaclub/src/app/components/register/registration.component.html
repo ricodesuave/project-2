@@ -1,0 +1,98 @@
+<!-- <h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }" />
+        <div *ngIf="submitted && form.firstName.errors" class="invalid-feedback">
+            <div *ngIf="form.firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.lastName.errors }" />
+        <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+            <div *ngIf="form.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input type="date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.dateOfBirth.errors }" />
+        <div *ngIf="submitted && form.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="form.dateOfBirth.errors.required">Date is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" />
+        <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+            <div *ngIf="form.email.errors.required">email is required</div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" />
+        <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+            <div *ngIf="form.password.errors.required">Password is required</div>
+            <div *ngIf="form.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" src="../../../assets/loading.gif" />
+        <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+</form> -->
+
+<mat-card-content>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width">
+
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }" />
+            <!-- <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="form.lastName.errors.required">Last Name is required</div>
+                    </div> -->
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.lastName.errors }" />
+                <!-- <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="form.lastName.errors.required">Last Name is required</div>
+                    </div> -->
+        </mat-form-field>
+
+        <!-- <mat-form-field class="full-width">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.dateOfBirth.errors }">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker startView="year" [startAt]="startDate"></mat-datepicker> 
+        </mat-form-field> -->
+
+        <mat-form-field>
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="myDatepicker" placeholder="Choose a date" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.dateOfBirth.errors }">
+                <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #myDatepicker></mat-datepicker>
+            </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" />
+        </mat-form-field>
+    </form>
+</mat-card-content>
+<mat-card-actions>
+<button mat-raised-button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary">Register</button>
+</mat-card-actions>
