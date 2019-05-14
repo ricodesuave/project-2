@@ -39,6 +39,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_register_registration_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/register/registration.component */ "./src/app/components/register/registration.component.ts");
+/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+
 
 
 
@@ -46,7 +48,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', component: _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__["UserPostComponent"] },
+    { path: '', component: _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_6__["LandingComponent"] },
+    { path: 'home', component: _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__["UserPostComponent"] },
     { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"] },
     { path: 'register', component: _components_register_registration_component__WEBPACK_IMPORTED_MODULE_5__["RegistrationComponent"] }
 ];
@@ -152,6 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_register_registration_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/register/registration.component */ "./src/app/components/register/registration.component.ts");
 /* harmony import */ var _material_material_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./material/material.module */ "./src/app/material/material.module.ts");
+/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+
 
 
 
@@ -187,6 +192,7 @@ var AppModule = /** @class */ (function () {
                 _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_18__["ClubLookupComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
                 _components_register_registration_component__WEBPACK_IMPORTED_MODULE_20__["RegistrationComponent"],
+                _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_22__["LandingComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -356,6 +362,72 @@ var ClubLookupComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/landing/landing.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/landing/landing.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbGFuZGluZy9sYW5kaW5nLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/landing/landing.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/components/landing/landing.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron\">\n    <h1 class=\"display-4\">Hello, World</h1>\n    <p class=\"lead\">Review Books, Create Clubs, and Connect</p>\n    <hr class=\"my-4\">\n    <h5>Sign up now to Connect with other Book Lovers!</h5>\n    <p>P.S We make it a point not to invade your privacy like others ;)</p>\n    <a class=\"btn btn-primary btn-lg\" routerLink=\"/register\" role=\"button\">Register Now</a>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/landing/landing.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/landing/landing.component.ts ***!
+  \*********************************************************/
+/*! exports provided: LandingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LandingComponent", function() { return LandingComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_login_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/login/auth.service */ "./src/app/services/login/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var LandingComponent = /** @class */ (function () {
+    function LandingComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+        if (this.authService.currentUserValue) {
+            this.router.navigate(['/home']);
+        }
+    }
+    LandingComponent.prototype.ngOnInit = function () {
+    };
+    LandingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-landing',
+            template: __webpack_require__(/*! ./landing.component.html */ "./src/app/components/landing/landing.component.html"),
+            styles: [__webpack_require__(/*! ./landing.component.css */ "./src/app/components/landing/landing.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_login_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], LandingComponent);
+    return LandingComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/login/login.component.css":
 /*!******************************************************!*\
   !*** ./src/app/components/login/login.component.css ***!
@@ -363,7 +435,7 @@ var ClubLookupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login-card{\n    width: 250px;\n    float: left;\n}\n\n.center-div{\n    margin: auto;\n    width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFFQTtJQUNJLFlBQVk7SUFDWixXQUFXO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4tY2FyZHtcbiAgICB3aWR0aDogMjUwcHg7XG4gICAgZmxvYXQ6IGxlZnQ7XG59XG5cbi5jZW50ZXItZGl2e1xuICAgIG1hcmdpbjogYXV0bztcbiAgICB3aWR0aDogYXV0bztcbn0iXX0= */"
+module.exports = ".my-form{\n    min-width: 150px;\n    max-width: 300px;\n    width: 250px;\n}\n.full-width {\n    width: 300px;\n    display: block;\n}\n.loginDiv{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    min-height: 100vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixZQUFZO0FBQ2hCO0FBQ0E7SUFDSSxZQUFZO0lBQ1osY0FBYztBQUNsQjtBQUVBO0lBQ0ksYUFBYTtJQUNiLHNCQUFzQjtJQUN0Qix1QkFBdUI7SUFDdkIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktZm9ybXtcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xuICAgIG1heC13aWR0aDogMzAwcHg7XG4gICAgd2lkdGg6IDI1MHB4O1xufVxuLmZ1bGwtd2lkdGgge1xuICAgIHdpZHRoOiAzMDBweDtcbiAgICBkaXNwbGF5OiBibG9jaztcbn1cblxuLmxvZ2luRGl2e1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtaW4taGVpZ2h0OiAxMDB2aDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -374,7 +446,7 @@ module.exports = ".login-card{\n    width: 250px;\n    float: left;\n}\n\n.cente
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Login</h2>\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n        <label for=\"email\">email</label>\n        <input type=\"text\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.email.errors }\" />\n        <div *ngIf=\"submitted && form.email.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.email.errors.required\">email is required</div>\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.password.errors }\" />\n        <div *ngIf=\"submitted && form.password.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.password.errors.required\">Password is required</div>\n        </div>\n    </div>\n    \n    <div class=\"form-group\">\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\n        <img *ngIf=\"loading\" src=\"../../../assets/loading.gif\" />\n        <a routerLink=\"/register\" class=\"btn btn-link\">Register</a>\n    </div>\n</form>\n\n<mat-progress\n"
+module.exports = "<div class=\"loginDiv\">\n<mat-card-content>\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit\">\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <label for=\"email\">Email Address</label>\n            <input matInput formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.email.errors }\" />\n        </mat-form-field>\n\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <label for=\"password\">Password</label>\n            <input matInput formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.password.errors }\" />\n        </mat-form-field>\n    </form>\n</mat-card-content>\n<mat-card-actions>\n    <button mat-raised-button (click)=\"onSubmit()\" [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\n    <a routerLink=\"/register\" class=\"btn btn-link\">Register</a>\n</mat-card-actions>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -409,7 +481,7 @@ var LoginComponent = /** @class */ (function () {
         this.submitted = false;
         // if already logged in, procede to home
         if (this.authService.currentUserValue) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/home']);
         }
         console.log('Login instatiation complete.');
     }
@@ -439,7 +511,7 @@ var LoginComponent = /** @class */ (function () {
         this.authService.login(this.form.email.value, this.form.password.value)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])()).subscribe(function (data) {
             console.log('Logged in');
-            _this.router.navigate(['/']);
+            _this.router.navigate(['/home']);
         }, function (error) {
             console.log('Error Logging in');
             _this.loading = false;
@@ -480,7 +552,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark static-top\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Bookz In Da Club </a>\n\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbar\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li>\n        <a *ngIf=\"currentUser\" class=\"nav-link\">Books<span class =\"sr-only\">(current)</span></a>\n      </li>\n      <li>\n        <a a *ngIf=\"currentUser\" class=\"nav-link\">Clubs<span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li ngbDropdown class=\"nav-item dropdown\">\n        <span ngbDropdownToggle class=\"nav-link dropdown-toggle\" id=\"dropdown01\">Setting</span>\n        <div ngbDropdownMenu class=\"dropdown-menu\" aria-labelledby=\"dropdown01\">\n          <a *ngIf=\"!currentUser\" class=\"dropdown-item\" routerLink=\"/login\">Login</a>\n          <a *ngIf=\"!currentUser\" class=\"dropdown-item\" routerLink=\"/register\">Register</a>\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n        </div>\n      </li>\n      <li>\n      </li>\n    </ul>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark static-top\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Bookz In Da Club </a>\n\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbar\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li>\n        <a *ngIf=\"currentUser\" class=\"nav-link\">Books<span class =\"sr-only\">(current)</span></a>\n      </li>\n      <li>\n        <a a *ngIf=\"currentUser\" class=\"nav-link\">Clubs<span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li ngbDropdown class=\"nav-item dropdown\">\n        <span ngbDropdownToggle class=\"nav-link dropdown-toggle\" id=\"dropdown01\">Setting</span>\n        <div ngbDropdownMenu  class=\"dropdown-menu\" aria-labelledby=\"dropdown01\">\n          <a *ngIf=\"!currentUser\" class=\"dropdown-item\" routerLink=\"/login\">Login</a>\n          <a *ngIf=\"!currentUser\" class=\"dropdown-item\" routerLink=\"/register\">Register</a>\n          <a *ngIf=\"currentUser\" class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n        </div>\n      </li>\n      <li>\n      </li>\n    </ul>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -540,7 +612,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".my-form{\n    min-width: 150px;\n    max-width: 300px;\n    width: 100%;\n}\n.full-width {\n    width: 250px;\n    display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztBQUNmO0FBQ0E7SUFDSSxZQUFZO0lBQ1osY0FBYztBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVnaXN0ZXIvcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktZm9ybXtcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xuICAgIG1heC13aWR0aDogMzAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG4uZnVsbC13aWR0aCB7XG4gICAgd2lkdGg6IDI1MHB4O1xuICAgIGRpc3BsYXk6IGJsb2NrO1xufSJdfQ== */"
+module.exports = ".my-form{\n    min-width: 150px;\n    max-width: 300px;\n    width: 100%;\n}\n.full-width {\n    width: 250px;\n    display: block;\n}\n.registrationDiv{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    min-height: 100vh;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixnQkFBZ0I7SUFDaEIsV0FBVztBQUNmO0FBQ0E7SUFDSSxZQUFZO0lBQ1osY0FBYztBQUNsQjtBQUVBO0lBQ0ksYUFBYTtJQUNiLHNCQUFzQjtJQUN0Qix1QkFBdUI7SUFDdkIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3JlZ2lzdGVyL3JlZ2lzdHJhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm15LWZvcm17XG4gICAgbWluLXdpZHRoOiAxNTBweDtcbiAgICBtYXgtd2lkdGg6IDMwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xufVxuLmZ1bGwtd2lkdGgge1xuICAgIHdpZHRoOiAyNTBweDtcbiAgICBkaXNwbGF5OiBibG9jaztcbn1cblxuLnJlZ2lzdHJhdGlvbkRpdntcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWluLWhlaWdodDogMTAwdmg7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -551,7 +623,7 @@ module.exports = ".my-form{\n    min-width: 150px;\n    max-width: 300px;\n    w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2>Register</h2>\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n    \n    <div class=\"form-group\">\n        <label for=\"firstName\">First Name</label>\n        <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.firstName.errors }\" />\n        <div *ngIf=\"submitted && form.firstName.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.firstName.errors.required\">First Name is required</div>\n        </div>\n    </div>\n    \n    <div class=\"form-group\">\n        <label for=\"lastName\">Last Name</label>\n        <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.lastName.errors }\" />\n        <div *ngIf=\"submitted && form.lastName.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.lastName.errors.required\">Last Name is required</div>\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label for=\"dateOfBirth\">Date Of Birth</label>\n        <input type=\"date\" formControlName=\"dateOfBirth\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.dateOfBirth.errors }\" />\n        <div *ngIf=\"submitted && form.dateOfBirth.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.dateOfBirth.errors.required\">Date is required</div>\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <label for=\"email\">email</label>\n        <input type=\"text\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.email.errors }\" />\n        <div *ngIf=\"submitted && form.email.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.email.errors.required\">email is required</div>\n        </div>\n    </div>\n    \n    <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.password.errors }\" />\n        <div *ngIf=\"submitted && form.password.errors\" class=\"invalid-feedback\">\n            <div *ngIf=\"form.password.errors.required\">Password is required</div>\n            <div *ngIf=\"form.password.errors.minlength\">Password must be at least 6 characters</div>\n        </div>\n    </div>\n\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\n        <img *ngIf=\"loading\" src=\"../../../assets/loading.gif\" />\n        <a [routerLink]=\"['/login']\" class=\"btn btn-link\">Cancel</a>\n    </div>\n</form> -->\n\n<mat-card-content>\n    <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n        <mat-form-field class=\"full-width\">\n\n            <mat-label>First Name</mat-label>\n            <input matInput formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.firstName.errors }\" />\n            <!-- <div *ngIf=\"submitted && form.lastName.errors\" class=\"invalid-feedback\">\n                    <div *ngIf=\"form.lastName.errors.required\">Last Name is required</div>\n                    </div> -->\n        </mat-form-field>\n\n        <mat-form-field class=\"full-width\">\n            <mat-label>Last Name</mat-label>\n            <input matInput formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.lastName.errors }\" />\n                <!-- <div *ngIf=\"submitted && form.lastName.errors\" class=\"invalid-feedback\">\n                    <div *ngIf=\"form.lastName.errors.required\">Last Name is required</div>\n                    </div> -->\n        </mat-form-field>\n\n        <!-- <mat-form-field class=\"full-width\">\n            <mat-label>Date Of Birth</mat-label>\n            <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\" formControlName=\"dateOfBirth\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.dateOfBirth.errors }\">\n            <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n            <mat-datepicker #myDatepicker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker> \n        </mat-form-field> -->\n\n        <mat-form-field>\n                <mat-label>Date Of Birth</mat-label>\n                <input matInput [matDatepicker]=\"myDatepicker\" placeholder=\"Choose a date\" formControlName=\"dateOfBirth\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.dateOfBirth.errors }\">\n                <mat-datepicker-toggle matSuffix [for]=\"myDatepicker\"></mat-datepicker-toggle>\n                <mat-datepicker #myDatepicker></mat-datepicker>\n            </mat-form-field>\n\n        <mat-form-field class=\"full-width\">\n            <mat-label>Email Address</mat-label>\n            <input matInput formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.email.errors }\" />\n        </mat-form-field>\n\n        <mat-form-field class=\"full-width\">\n            <mat-label>Password</mat-label>\n            <input matInput formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.password.errors }\" />\n        </mat-form-field>\n    </form>\n</mat-card-content>\n<mat-card-actions>\n<button mat-raised-button (click)=\"onSubmit()\" [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\n</mat-card-actions>\n"
+module.exports = "<div class=\"registrationDiv\">\n    <mat-card-content>\n        <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n            <mat-form-field class=\"full-width\" appearance=\"outline\">\n    \n                <mat-label>First Name</mat-label>\n                <input matInput formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.firstName.errors }\" />\n                <!-- <div *ngIf=\"submitted && form.lastName.errors\" class=\"invalid-feedback\">\n                        <div *ngIf=\"form.lastName.errors.required\">Last Name is required</div>\n                        </div> -->\n            </mat-form-field>\n    \n            <mat-form-field class=\"full-width\" appearance=\"outline\">\n                <mat-label>Last Name</mat-label>\n                <input matInput formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.lastName.errors }\" />\n                    <!-- <div *ngIf=\"submitted && form.lastName.errors\" class=\"invalid-feedback\">\n                        <div *ngIf=\"form.lastName.errors.required\">Last Name is required</div>\n                        </div> -->\n            </mat-form-field>\n    \n            <mat-form-field class=\"full-width\" appearance=\"outline\">\n                <mat-label>Email Address</mat-label>\n                <input matInput formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.email.errors }\" />\n            </mat-form-field>\n    \n            <mat-form-field class=\"full-width\" appearance=\"outline\">\n                <mat-label>Password</mat-label>\n                <input matInput formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.password.errors }\" />\n            </mat-form-field>\n\n            <mat-form-field>\n                    <mat-label>Date Of Birth</mat-label>\n                    <input matInput [matDatepicker]=\"myDatepicker\" placeholder=\"Choose a date\" formControlName=\"dateOfBirth\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && form.dateOfBirth.errors }\">\n                    <mat-datepicker-toggle matSuffix [for]=\"myDatepicker\"></mat-datepicker-toggle>\n                    <mat-datepicker #myDatepicker></mat-datepicker>\n                </mat-form-field>\n                \n        </form>\n    </mat-card-content>\n    <mat-card-actions>\n    <button mat-raised-button (click)=\"onSubmit()\" [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\n    </mat-card-actions>\n</div>"
 
 /***/ }),
 
@@ -588,7 +660,7 @@ var RegistrationComponent = /** @class */ (function () {
         this.loading = false;
         this.submitted = false;
         if (this.authService.currentUserValue) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/home']);
         }
     }
     RegistrationComponent.prototype.ngOnInit = function () {

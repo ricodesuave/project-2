@@ -26,7 +26,7 @@ export class RegistrationComponent implements OnInit {
     private userService: UserService
   ) {
     if (this.authService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 
@@ -55,6 +55,7 @@ export class RegistrationComponent implements OnInit {
     console.log('Form Valid');
     console.log(this.form.dateOfBirth.value);
     this.loading = true;
+
     this.userService.register(this.registerForm.value)
     .pipe(first()).subscribe(
       data => {

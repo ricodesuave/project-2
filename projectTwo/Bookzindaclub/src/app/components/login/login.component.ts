@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
 
 import { AuthService } from '../../services/login/auth.service';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +13,14 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
+  }
 
   loginForm: FormGroup;
   loading = false;
@@ -27,7 +33,7 @@ export class LoginComponent implements OnInit {
   ) {
     // if already logged in, procede to home
     if (this.authService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
     console.log('Login instatiation complete.');
   }
@@ -43,6 +49,8 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
+  
+
   onSubmit() {
     this.submitted = true;
     console.log(this.form.email.value);
@@ -57,7 +65,7 @@ export class LoginComponent implements OnInit {
       .pipe(first()).subscribe(
         data => {
           console.log('Logged in');
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         },
         error => {
           console.log('Error Logging in');

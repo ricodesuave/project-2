@@ -27,6 +27,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/register/registration.component';
 
 import { MaterialModule } from './material/material.module';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MaterialModule } from './material/material.module';
     ClubLookupComponent,
     LoginComponent,
     RegistrationComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
