@@ -30,6 +30,8 @@ import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { HomeComponent } from './components/home/home.component';
 import { MeetingPostComponent } from './components/meeting-post/meeting-post.component';
+import { BookLookupComponent } from './components/book-lookup/book-lookup.component';
+import { ClubMemberService } from './services/club-member.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { MeetingPostComponent } from './components/meeting-post/meeting-post.com
     LandingComponent,
     HomeComponent,
     MeetingPostComponent,
+    BookLookupComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,7 @@ import { MeetingPostComponent } from './components/meeting-post/meeting-post.com
     NgbModule,
     MaterialModule
   ],
-  providers: [ReviewsService, UserService, ClubServiceService],
+  providers: [ReviewsService, UserService, ClubServiceService, ClubMemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
