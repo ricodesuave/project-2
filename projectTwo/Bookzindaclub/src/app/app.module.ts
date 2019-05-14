@@ -28,6 +28,8 @@ import { RegistrationComponent } from './components/register/registration.compon
 
 import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './components/landing/landing.component';
+import { HomeComponent } from './components/home/home.component';
+import { MeetingPostComponent } from './components/meeting-post/meeting-post.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { LandingComponent } from './components/landing/landing.component';
     LoginComponent,
     RegistrationComponent,
     LandingComponent,
+    HomeComponent,
+    MeetingPostComponent,
   ],
   imports: [
     BrowserModule,

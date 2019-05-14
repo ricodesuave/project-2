@@ -37,9 +37,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_register_registration_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/register/registration.component */ "./src/app/components/register/registration.component.ts");
-/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_register_registration_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/register/registration.component */ "./src/app/components/register/registration.component.ts");
+/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+
 
 
 
@@ -48,10 +50,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', component: _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_6__["LandingComponent"] },
-    { path: 'home', component: _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__["UserPostComponent"] },
-    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"] },
-    { path: 'register', component: _components_register_registration_component__WEBPACK_IMPORTED_MODULE_5__["RegistrationComponent"] }
+    { path: '', component: _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_7__["LandingComponent"] },
+    { path: 'home', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] },
+    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"] },
+    { path: 'register', component: _components_register_registration_component__WEBPACK_IMPORTED_MODULE_6__["RegistrationComponent"] },
+    { path: 'reviews', component: _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_3__["UserPostComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -156,6 +159,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_register_registration_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/register/registration.component */ "./src/app/components/register/registration.component.ts");
 /* harmony import */ var _material_material_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./material/material.module */ "./src/app/material/material.module.ts");
 /* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_meeting_post_meeting_post_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/meeting-post/meeting-post.component */ "./src/app/components/meeting-post/meeting-post.component.ts");
+
+
 
 
 
@@ -193,6 +200,8 @@ var AppModule = /** @class */ (function () {
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
                 _components_register_registration_component__WEBPACK_IMPORTED_MODULE_20__["RegistrationComponent"],
                 _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_22__["LandingComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_23__["HomeComponent"],
+                _components_meeting_post_meeting_post_component__WEBPACK_IMPORTED_MODULE_24__["MeetingPostComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -356,6 +365,62 @@ var ClubLookupComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__["ClubServiceService"]])
     ], ClubLookupComponent);
     return ClubLookupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/home/home.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/components/home/home.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".userPost{\n    display: flex;\n    flex-direction: column;\n    justify-content: none;\n    align-items: center;\n    text-align: center;\n    min-height: 100vh;\n}\n\n.meetingPost{\n    display: flex;\n    flex-direction: column;\n    justify-content: none;\n    align-items: center;\n    text-align: center;\n    min-height: 100vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGFBQWE7SUFDYixzQkFBc0I7SUFDdEIscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixxQkFBcUI7SUFDckIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnVzZXJQb3N0e1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IG5vbmU7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWluLWhlaWdodDogMTAwdmg7XG59XG5cbi5tZWV0aW5nUG9zdHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAganVzdGlmeS1jb250ZW50OiBub25lO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIG1pbi1oZWlnaHQ6IDEwMHZoO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/home/home.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/home/home.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-tab-group mat-align-tabs=\"center\">\n    <mat-tab label=\"Reviews\" class=\"userPost\">\n        <div class=\"userPost\">\n            <app-user-post></app-user-post>\n        </div>\n    </mat-tab>\n    <mat-tab label=\"Meetings\">\n        <div class=\"meetingPost\">\n                <app-meeting-post></app-meeting-post>\n        </div>\n    </mat-tab>\n</mat-tab-group>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/home/home.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/home/home.component.ts ***!
+  \***************************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/components/home/home.component.html"),
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/components/home/home.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
@@ -528,6 +593,69 @@ var LoginComponent = /** @class */ (function () {
             _services_login_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])
     ], LoginComponent);
     return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/meeting-post/meeting-post.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/meeting-post/meeting-post.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".post-card{\n    margin: 5px;\n    width: 350px;\n}\n\nli{\n    list-style-type: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWV0aW5nLXBvc3QvbWVldGluZy1wb3N0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVldGluZy1wb3N0L21lZXRpbmctcG9zdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBvc3QtY2FyZHtcbiAgICBtYXJnaW46IDVweDtcbiAgICB3aWR0aDogMzUwcHg7XG59XG5cbmxpe1xuICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/meeting-post/meeting-post.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/meeting-post/meeting-post.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div class=\"divCard\">\n  <ul>\n      <li *ngFor=\"let review of reviews\" class=\"post-card\">\n          <mat-card class=\"card\">\n              <mat-card-header>\n                <mat-card-title>{{ review.bookId }}</mat-card-title>\n                <mat-card-subtitle>{{ review.reviewDate }}</mat-card-subtitle>\n              </mat-card-header>\n              <mat-card-content>\n                <p>{{ review.reviewDescription }}</p>\n              </mat-card-content>\n            </mat-card>\n      </li>\n    </ul>\n</div> -->\n<div class=\"divCard\">\n  <ul>\n      <li class=\"post-card\">\n          <mat-card class=\"card\">\n              <mat-card-header>\n                <mat-card-title>test</mat-card-title>\n                <mat-card-subtitle>test</mat-card-subtitle>\n              </mat-card-header>\n              <mat-card-content>\n                <p>test</p>\n              </mat-card-content>\n            </mat-card>\n      </li>\n    </ul>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/meeting-post/meeting-post.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/meeting-post/meeting-post.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: MeetingPostComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MeetingPostComponent", function() { return MeetingPostComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_reviews_reviews_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reviews/reviews.service */ "./src/app/services/reviews/reviews.service.ts");
+
+
+
+var MeetingPostComponent = /** @class */ (function () {
+    function MeetingPostComponent(reviewService) {
+        this.reviewService = reviewService;
+    }
+    MeetingPostComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reviewService.getAll().subscribe(function (data) {
+            _this.reviews = data;
+        });
+    };
+    MeetingPostComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-meeting-post',
+            template: __webpack_require__(/*! ./meeting-post.component.html */ "./src/app/components/meeting-post/meeting-post.component.html"),
+            styles: [__webpack_require__(/*! ./meeting-post.component.css */ "./src/app/components/meeting-post/meeting-post.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_reviews_reviews_service__WEBPACK_IMPORTED_MODULE_2__["ReviewsService"]])
+    ], MeetingPostComponent);
+    return MeetingPostComponent;
 }());
 
 
@@ -727,7 +855,7 @@ var RegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1wb3N0L3VzZXItcG9zdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".post-card{\n    margin: 5px;\n    width: 350px;\n}\n\nli{\n    list-style-type: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyLXBvc3QvdXNlci1wb3N0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1wb3N0L3VzZXItcG9zdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBvc3QtY2FyZHtcbiAgICBtYXJnaW46IDVweDtcbiAgICB3aWR0aDogMzUwcHg7XG59XG5cbmxpe1xuICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcbn0iXX0= */"
 
 /***/ }),
 
@@ -738,7 +866,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card my-5\">\n  <div class=\"card-body\">\n    <div>\n    </div>\n    <table class=\"table table-bordered table-striped\">\n      <thead class=\"thead-dark\">\n        <tr>\n          <th scope=\"col\">User Id</th>\n          <th scope=\"col\">Book Id</th>\n          <th scope=\"col\">Description</th>\n          <th scope=\"col\">Rating</th>\n          <th scope=\"col\">Date</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let review of reviews\">\n          <td>{{ review.userId }}</td>\n          <td>{{ review.bookId }}</td>\n          <td>{{ review.reviewDescription }}</td>\n          <td>{{ review.rating }}</td>\n          <td>{{ review.reviewDate }}</td>\n        </tr>\n      </tbody>\n      </table>\n  </div>\n</div>\n\n\n"
+module.exports = "<div class=\"divCard\">\n    <ul>\n        <li *ngFor=\"let review of reviews\" class=\"post-card\">\n            <mat-card class=\"card\">\n                <mat-card-header>\n                  <mat-card-title>{{ review.reviewIdentity.bookId }}</mat-card-title>\n                  <mat-card-subtitle>{{ review.reviewDate }}</mat-card-subtitle>\n                </mat-card-header>\n                <mat-card-content>\n                  <p>{{ review.reviewDescription }}</p>\n                </mat-card-content>\n              </mat-card>\n        </li>\n      </ul>\n</div>\n"
 
 /***/ }),
 
@@ -805,6 +933,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var MaterialModule = /** @class */ (function () {
     function MaterialModule() {
     }
@@ -815,13 +944,13 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCardModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"],],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]],
             exports: [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                 _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_4__["MatDatepickerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCardModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"],],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]],
         })
     ], MaterialModule);
     return MaterialModule;

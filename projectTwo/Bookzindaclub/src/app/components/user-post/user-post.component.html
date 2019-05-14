@@ -1,28 +1,15 @@
-<div class="card my-5">
-  <div class="card-body">
-    <div>
-    </div>
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">User Id</th>
-          <th scope="col">Book Id</th>
-          <th scope="col">Description</th>
-          <th scope="col">Rating</th>
-          <th scope="col">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let review of reviews">
-          <td>{{ review.userId }}</td>
-          <td>{{ review.bookId }}</td>
-          <td>{{ review.reviewDescription }}</td>
-          <td>{{ review.rating }}</td>
-          <td>{{ review.reviewDate }}</td>
-        </tr>
-      </tbody>
-      </table>
-  </div>
+<div class="divCard">
+    <ul>
+        <li *ngFor="let review of reviews" class="post-card">
+            <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title>{{ review.reviewIdentity.bookId }}</mat-card-title>
+                  <mat-card-subtitle>{{ review.reviewDate }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>{{ review.reviewDescription }}</p>
+                </mat-card-content>
+              </mat-card>
+        </li>
+      </ul>
 </div>
-
-

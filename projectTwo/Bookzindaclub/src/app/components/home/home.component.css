@@ -1,0 +1,17 @@
+.userPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.meetingPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
