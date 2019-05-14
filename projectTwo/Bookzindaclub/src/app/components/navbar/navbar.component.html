@@ -15,7 +15,7 @@
           <div *ngIf="currentUser" ngbDropdown class="nav-item dropdown">
               <span ngbDropdownToggle class="nav-link dropdown-toggle" id="booksDropdown">Books</span>
               <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="booksDropdown">
-                <a *ngIf="currentUser" class="dropdown-item" routerLink="/login">Lookup</a>
+                <a *ngIf="currentUser" class="dropdown-item" routerLink="/books">Lookup</a>
               </div>
           </div>
         </li>
@@ -24,8 +24,8 @@
         <div *ngIf="currentUser" ngbDropdown class="nav-item dropdown">
             <span ngbDropdownToggle class="nav-link dropdown-toggle" id="clubsDropdown">Clubs</span>
             <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="clubsDropdown">
-              <a *ngIf="currentUser" class="dropdown-item" routerLink="/login">Lookup</a>
-              <a *ngIf="currentUser" class="dropdown-item" routerLink="/register">Manage</a>
+              <a *ngIf="currentUser" class="dropdown-item" routerLink="/lookup">Lookup</a>
+              <a *ngIf="currentUser" class="dropdown-item" routerLink="/manage">Manage</a>
             </div>
         </div>
       </li>
