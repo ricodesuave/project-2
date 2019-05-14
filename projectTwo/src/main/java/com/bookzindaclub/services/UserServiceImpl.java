@@ -79,14 +79,9 @@ public class UserServiceImpl implements UserService
     public User authenticateUsingCredentials(User input) {
         System.out.println("Creating User Object");
 
-        System.out.println(input.getEmail());
-        System.out.println(input.getPassword());
-
         User user = this.userRepo.getByEmailAndPassword(input.getEmail(), input.getPassword());
 
         System.out.println("User Object Completed");
-
-        System.out.println(user);
 
         if(user.getEmail().equals(input.getEmail()) && user.getPassword().equals(input.getPassword())){
             return user;
