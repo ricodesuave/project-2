@@ -6,6 +6,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatListModule} from '@angular/material/list';
+
 
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
@@ -32,6 +34,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MeetingPostComponent } from './components/meeting-post/meeting-post.component';
 import { BookLookupComponent } from './components/book-lookup/book-lookup.component';
 import { ClubMemberService } from './services/club-member.service';
+import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
+import { ClubListComponent } from './components/club-list/club-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,9 @@ import { ClubMemberService } from './services/club-member.service';
     LandingComponent,
     HomeComponent,
     MeetingPostComponent,
-    BookLookupComponent
+    BookLookupComponent,
+    ClubManagementViewComponent,
+    ClubListComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,8 @@ import { ClubMemberService } from './services/club-member.service';
     MatProgressSpinnerModule,
     MatIconModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    MatListModule
   ],
   providers: [ReviewsService, UserService, ClubServiceService, ClubMemberService],
   bootstrap: [AppComponent]
