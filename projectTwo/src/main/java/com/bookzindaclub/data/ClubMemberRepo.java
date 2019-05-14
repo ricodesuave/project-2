@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface ClubMemberRepo extends JpaRepository<ClubMember, ClubMemberIdentity> {
     List<ClubMember> findAllByClubMemberIdentity_ClubIdEquals(int clubId);
+    List<ClubMember> findAllByClubMemberIdentity_UserIdEquals(int userId);
 }

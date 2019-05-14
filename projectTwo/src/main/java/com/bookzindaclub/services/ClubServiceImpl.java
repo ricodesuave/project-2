@@ -57,4 +57,9 @@ public class ClubServiceImpl implements ClubService {
     public void updateClub(Club c) {
         this.clubRepo.save(c);
     }
+
+    @Override
+    public List<Club> getAllClubsInList(List<Integer> clubIds) {
+        return clubRepo.findAllByClubIdIn(clubIds);
+    }
 }

@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Revature\project2\project-2\projectTwo\Bookzindaclub\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\Jose Nunez\Desktop\Git_Repos\ProjectTwo\project-2\projectTwo\Bookzindaclub\src\styles.css */"./src/styles.css");
 
 
 /***/ })

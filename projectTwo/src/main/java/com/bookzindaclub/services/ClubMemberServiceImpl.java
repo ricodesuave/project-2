@@ -50,4 +50,9 @@ public class ClubMemberServiceImpl implements ClubMemberService{
     public void updateClubMember(ClubMember clubMember) {
         this.clubMemberRepo.save(clubMember);
     }
+
+    @Override
+    public List<ClubMember> getAllFromUser(int userId) {
+        return clubMemberRepo.findAllByClubMemberIdentity_UserIdEquals(userId);
+    }
 }

@@ -78,7 +78,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- \r\n\r\n<router-outlet></router-outlet> -->\r\n<app-navbar></app-navbar>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"card bg-dark my-5\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"text-center list-inline py-3\">\r\n            <li class=\"list-inline-item\"><a routerLink=\"/posts\" class=\"btn btn-info\">List Reviews</a></li>\r\n            </ul>\r\n        </div>\r\n        </div>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n    </div>\r\n  </div>\r\n\r\n<app-club-lookup></app-club-lookup>\r\n"
+module.exports = "<!-- \r\n\r\n<router-outlet></router-outlet> -->\r\n<app-navbar></app-navbar>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"card bg-dark my-5\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"text-center list-inline py-3\">\r\n            <li class=\"list-inline-item\"><a routerLink=\"/posts\" class=\"btn btn-info\">List Reviews</a></li>\r\n            </ul>\r\n        </div>\r\n        </div>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n    </div>\r\n  </div>\r\n\r\n<app-club-management-view></app-club-management-view>\r\n"
 
 /***/ }),
 
@@ -135,13 +135,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/club-creation-form/club-creation-form.component */ "./src/app/components/club-creation-form/club-creation-form.component.ts");
-/* harmony import */ var _services_club_service_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/club-service.service */ "./src/app/services/club-service.service.ts");
-/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
-/* harmony import */ var _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/club-lookup/club-lookup.component */ "./src/app/components/club-lookup/club-lookup.component.ts");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/club-creation-form/club-creation-form.component */ "./src/app/components/club-creation-form/club-creation-form.component.ts");
+/* harmony import */ var _services_club_service_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/club-service.service */ "./src/app/services/club-service.service.ts");
+/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
+/* harmony import */ var _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/club-lookup/club-lookup.component */ "./src/app/components/club-lookup/club-lookup.component.ts");
+/* harmony import */ var _components_club_management_view_club_management_view_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/club-management-view/club-management-view.component */ "./src/app/components/club-management-view/club-management-view.component.ts");
+/* harmony import */ var _components_club_list_club_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/club-list/club-list.component */ "./src/app/components/club-list/club-list.component.ts");
+
+
+
 
 
 
@@ -166,15 +172,17 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_9__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
-                _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__["ClubCreationFormComponent"],
-                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
-                _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__["UserPostComponent"],
-                _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_17__["ClubLookupComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"],
+                _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_14__["ClubCreationFormComponent"],
+                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_16__["NavbarComponent"],
+                _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_17__["UserPostComponent"],
+                _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_18__["ClubLookupComponent"],
+                _components_club_management_view_club_management_view_component__WEBPACK_IMPORTED_MODULE_19__["ClubManagementViewComponent"],
+                _components_club_list_club_list_component__WEBPACK_IMPORTED_MODULE_20__["ClubListComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
@@ -183,10 +191,11 @@ var AppModule = /** @class */ (function () {
                 _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormFieldModule"],
                 _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"]
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
+                _angular_material_list__WEBPACK_IMPORTED_MODULE_11__["MatListModule"]
             ],
-            providers: [_services_club_service_service__WEBPACK_IMPORTED_MODULE_14__["ClubServiceService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
+            providers: [_services_club_service_service__WEBPACK_IMPORTED_MODULE_15__["ClubServiceService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -277,6 +286,69 @@ var ClubCreationFormComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/club-list/club-list.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/club-list/club-list.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2x1Yi1saXN0L2NsdWItbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/club-list/club-list.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/club-list/club-list.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-action-list>\n  <button mat-list-item *ngFor=\"let club of clubs\">\n    <!-- <mat-list-item> -->\n      <mat-icon mat-list-icon>group</mat-icon>\n      <h3 mat-line>{{club.clubName}}</h3>\n    <!-- </mat-list-item> -->\n  </button>\n  \n</mat-action-list>>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/club-list/club-list.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/club-list/club-list.component.ts ***!
+  \*************************************************************/
+/*! exports provided: ClubListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubListComponent", function() { return ClubListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/club-service.service */ "./src/app/services/club-service.service.ts");
+
+
+
+var ClubListComponent = /** @class */ (function () {
+    function ClubListComponent(clubService) {
+        this.clubService = clubService;
+    }
+    ClubListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.clubService.findAllFromUser(9001).subscribe(function (data) {
+            _this.clubs = data;
+        });
+    };
+    ClubListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-club-list',
+            template: __webpack_require__(/*! ./club-list.component.html */ "./src/app/components/club-list/club-list.component.html"),
+            styles: [__webpack_require__(/*! ./club-list.component.css */ "./src/app/components/club-list/club-list.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__["ClubServiceService"]])
+    ], ClubListComponent);
+    return ClubListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/club-lookup/club-lookup.component.css":
 /*!******************************************************************!*\
   !*** ./src/app/components/club-lookup/club-lookup.component.css ***!
@@ -334,6 +406,62 @@ var ClubLookupComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__["ClubServiceService"]])
     ], ClubLookupComponent);
     return ClubLookupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/club-management-view/club-management-view.component.css":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/club-management-view/club-management-view.component.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2x1Yi1tYW5hZ2VtZW50LXZpZXcvY2x1Yi1tYW5hZ2VtZW50LXZpZXcuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/club-management-view/club-management-view.component.html":
+/*!*************************************************************************************!*\
+  !*** ./src/app/components/club-management-view/club-management-view.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-club-list></app-club-list>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/club-management-view/club-management-view.component.ts":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/club-management-view/club-management-view.component.ts ***!
+  \***********************************************************************************/
+/*! exports provided: ClubManagementViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubManagementViewComponent", function() { return ClubManagementViewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ClubManagementViewComponent = /** @class */ (function () {
+    function ClubManagementViewComponent() {
+    }
+    ClubManagementViewComponent.prototype.ngOnInit = function () {
+    };
+    ClubManagementViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-club-management-view',
+            template: __webpack_require__(/*! ./club-management-view.component.html */ "./src/app/components/club-management-view/club-management-view.component.html"),
+            styles: [__webpack_require__(/*! ./club-management-view.component.css */ "./src/app/components/club-management-view/club-management-view.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ClubManagementViewComponent);
+    return ClubManagementViewComponent;
 }());
 
 
@@ -534,6 +662,10 @@ var ClubServiceService = /** @class */ (function () {
     ClubServiceService.prototype.findAll = function () {
         return this.http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/clubs/clubs");
     };
+    ClubServiceService.prototype.findAllFromUser = function (userId) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('ownerId', userId.toString());
+        return this.http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/clubs/owner", { params: params });
+    };
     ClubServiceService.prototype.save = function (club) {
         return this.http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/clubs/save", club);
     };
@@ -682,7 +814,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Revature\project2\project-2\projectTwo\Bookzindaclub\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Jose Nunez\Desktop\Git_Repos\ProjectTwo\project-2\projectTwo\Bookzindaclub\src\main.ts */"./src/main.ts");
 
 
 /***/ })

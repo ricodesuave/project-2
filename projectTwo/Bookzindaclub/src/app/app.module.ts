@@ -7,7 +7,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -20,6 +21,8 @@ import { ClubServiceService } from './services/club-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserPostComponent } from './components/user-post/user-post.component';
 import { ClubLookupComponent } from './components/club-lookup/club-lookup.component';
+import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
+import { ClubListComponent } from './components/club-list/club-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { ClubLookupComponent } from './components/club-lookup/club-lookup.compon
     ClubCreationFormComponent,
     NavbarComponent,
     UserPostComponent,
-    ClubLookupComponent
+    ClubLookupComponent,
+    ClubManagementViewComponent,
+    ClubListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,8 @@ import { ClubLookupComponent } from './components/club-lookup/club-lookup.compon
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [ClubServiceService],
   bootstrap: [AppComponent]

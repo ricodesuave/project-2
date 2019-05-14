@@ -9,6 +9,7 @@ public interface ClubService {
     Club getByName(String name);
     List<Club> getAll();
     List<Club> getAllByOwner(int ownerId);
+    List<Club> getAllClubsInList(List<Integer> clubIds);
     int newClub(Club c);
     void deleteClub(Club c);
     void updateClub(Club c);
