@@ -1,7 +1,9 @@
 export class ClubMember {
     constructor(
-        public clubId: number,
-        public userId: number,
+        public clubMemberIdentity: {
+            clubId: number,
+            userId: number,
+        },
         public joinDate: string
     ){}
 }
