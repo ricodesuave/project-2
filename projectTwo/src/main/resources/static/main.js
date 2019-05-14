@@ -142,6 +142,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
 /* harmony import */ var _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-post/user-post.component */ "./src/app/components/user-post/user-post.component.ts");
 /* harmony import */ var _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/club-lookup/club-lookup.component */ "./src/app/components/club-lookup/club-lookup.component.ts");
+/* harmony import */ var _components_book_lookup_book_lookup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/book-lookup/book-lookup.component */ "./src/app/components/book-lookup/book-lookup.component.ts");
+/* harmony import */ var _services_club_member_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/club-member.service */ "./src/app/services/club-member.service.ts");
+
+
 
 
 
@@ -170,7 +174,8 @@ var AppModule = /** @class */ (function () {
                 _components_club_creation_form_club_creation_form_component__WEBPACK_IMPORTED_MODULE_13__["ClubCreationFormComponent"],
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
                 _components_user_post_user_post_component__WEBPACK_IMPORTED_MODULE_16__["UserPostComponent"],
-                _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_17__["ClubLookupComponent"]
+                _components_club_lookup_club_lookup_component__WEBPACK_IMPORTED_MODULE_17__["ClubLookupComponent"],
+                _components_book_lookup_book_lookup_component__WEBPACK_IMPORTED_MODULE_18__["BookLookupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -185,11 +190,70 @@ var AppModule = /** @class */ (function () {
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
                 _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"]
             ],
-            providers: [_services_club_service_service__WEBPACK_IMPORTED_MODULE_14__["ClubServiceService"]],
+            providers: [_services_club_service_service__WEBPACK_IMPORTED_MODULE_14__["ClubServiceService"], _services_club_member_service__WEBPACK_IMPORTED_MODULE_19__["ClubMemberService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/book-lookup/book-lookup.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/book-lookup/book-lookup.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYm9vay1sb29rdXAvYm9vay1sb29rdXAuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/book-lookup/book-lookup.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/book-lookup/book-lookup.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <table>\n    <thead>\n      <th scope=\"col\">Book Title</th>\n      <th scope=\"col\">Book Author</th>\n      <th scope=\"col\">Options</th>\n    </thead>\n    <tbody id=\"book-table-body\">\n      \n    </tbody>\n  </table>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/book-lookup/book-lookup.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/book-lookup/book-lookup.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: BookLookupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookLookupComponent", function() { return BookLookupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_book_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/book-service.service */ "./src/app/services/book-service.service.ts");
+
+
+
+var BookLookupComponent = /** @class */ (function () {
+    function BookLookupComponent(bookService) {
+        this.bookService = bookService;
+    }
+    BookLookupComponent.prototype.ngOnInit = function () {
+    };
+    BookLookupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-book-lookup',
+            template: __webpack_require__(/*! ./book-lookup.component.html */ "./src/app/components/book-lookup/book-lookup.component.html"),
+            styles: [__webpack_require__(/*! ./book-lookup.component.css */ "./src/app/components/book-lookup/book-lookup.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_book_service_service__WEBPACK_IMPORTED_MODULE_2__["BookServiceService"]])
+    ], BookLookupComponent);
+    return BookLookupComponent;
 }());
 
 
@@ -284,7 +348,7 @@ var ClubCreationFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2x1Yi1sb29rdXAvY2x1Yi1sb29rdXAuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "table, th, td {\r\n    border: 1px solid black;\r\n    padding: 15px;\r\n    text-align: left\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jbHViLWxvb2t1cC9jbHViLWxvb2t1cC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGFBQWE7SUFDYjtFQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9jbHViLWxvb2t1cC9jbHViLWxvb2t1cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUsIHRoLCB0ZCB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0XHJcbiAgfSJdfQ== */"
 
 /***/ }),
 
@@ -295,7 +359,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <table>\r\n    <thead>\r\n    <tr>\r\n      <th scope=\"col\">Club Name</th>\r\n      <th scope=\"col\">Club Description</th>\r\n      <th scope=\"col\">Owner</th>\r\n      <th scope=\"col\">Options</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody id=\"club-lookup-body\">\r\n    <tr *ngFor=\"let club of clubs\">\r\n      <td>{{club.clubName}}</td>\r\n      <td>{{club.clubDescription}}</td>\r\n      <td>{{club.ownerId}}</td>\r\n      <td>\r\n        <button>Subscribe</button>\r\n        <button>Unsubscribe</button></td>\r\n    </tr>\r\n  </tbody>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <table>\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">Club Name</th>\r\n        <th scope=\"col\">Club Description</th>\r\n        <th scope=\"col\">Owner</th>\r\n        <th scope=\"col\">Options</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody id=\"club-lookup-body\">\r\n      <tr *ngFor=\"let club of clubs; let i = index\" >\r\n        <td>{{club.clubName}}</td>\r\n        <td>{{club.clubDescription}}</td>\r\n        <td>{{club.owner.firstName}} {{club.owner.lastName}}</td>\r\n        <td>\r\n          <button mat-raised-button color=\"primary\" (click)=\"Subscribe($event, i)\" type=\"button\">Subscribe</button>\r\n          <button mat-raised-button color=\"warn\" (click)=\"Unsubscribe($event, i)\" type=\"button\">Unsubscribe</button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -312,12 +376,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/club-service.service */ "./src/app/services/club-service.service.ts");
+/* harmony import */ var src_app_models_club_member__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/models/club-member */ "./src/app/models/club-member.ts");
+/* harmony import */ var src_app_services_club_member_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/club-member.service */ "./src/app/services/club-member.service.ts");
+
+
 
 
 
 var ClubLookupComponent = /** @class */ (function () {
-    function ClubLookupComponent(clubService) {
+    function ClubLookupComponent(clubService, clubMemberService) {
         this.clubService = clubService;
+        this.clubMemberService = clubMemberService;
     }
     ClubLookupComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -325,13 +394,28 @@ var ClubLookupComponent = /** @class */ (function () {
             _this.clubs = data;
         });
     };
+    ClubLookupComponent.prototype.Subscribe = function (event, i) {
+        console.log(i);
+        console.log(this.clubs[i].clubId);
+        var clubMemberIdentity = { clubId: this.clubs[i].clubId, userId: 5 };
+        var newMember = new src_app_models_club_member__WEBPACK_IMPORTED_MODULE_3__["ClubMember"](clubMemberIdentity, 'date goes here');
+        this.clubMemberService.insertClubMember(newMember).subscribe(function (data) {
+            console.log(data);
+        });
+        console.log(newMember);
+    };
+    ClubLookupComponent.prototype.Unsubscribe = function (event, i) {
+        var clubMemberIdentity = { clubId: this.clubs[i].clubId, userId: 5 };
+        var newMember = new src_app_models_club_member__WEBPACK_IMPORTED_MODULE_3__["ClubMember"](clubMemberIdentity, 'date goes here');
+        this.clubMemberService.deleteClubMember(newMember);
+    };
     ClubLookupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-club-lookup',
             template: __webpack_require__(/*! ./club-lookup.component.html */ "./src/app/components/club-lookup/club-lookup.component.html"),
             styles: [__webpack_require__(/*! ./club-lookup.component.css */ "./src/app/components/club-lookup/club-lookup.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__["ClubServiceService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_club_service_service__WEBPACK_IMPORTED_MODULE_2__["ClubServiceService"], src_app_services_club_member_service__WEBPACK_IMPORTED_MODULE_4__["ClubMemberService"]])
     ], ClubLookupComponent);
     return ClubLookupComponent;
 }());
@@ -459,6 +543,28 @@ var UserPostComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/models/club-member.ts":
+/*!***************************************!*\
+  !*** ./src/app/models/club-member.ts ***!
+  \***************************************/
+/*! exports provided: ClubMember */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubMember", function() { return ClubMember; });
+var ClubMember = /** @class */ (function () {
+    function ClubMember(clubMemberIdentity, joinDate) {
+        this.clubMemberIdentity = clubMemberIdentity;
+        this.joinDate = joinDate;
+    }
+    return ClubMember;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/models/club.ts":
 /*!********************************!*\
   !*** ./src/app/models/club.ts ***!
@@ -503,6 +609,85 @@ var User = /** @class */ (function () {
         this.dateOfBirth = dateOfBirth;
     }
     return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/book-service.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/book-service.service.ts ***!
+  \**************************************************/
+/*! exports provided: BookServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookServiceService", function() { return BookServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment.prod */ "./src/environments/environment.prod.ts");
+
+
+
+
+var BookServiceService = /** @class */ (function () {
+    function BookServiceService(http) {
+        this.http = http;
+    }
+    BookServiceService.prototype.findAll = function () {
+        return this.http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/books/books");
+    };
+    BookServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], BookServiceService);
+    return BookServiceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/club-member.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/club-member.service.ts ***!
+  \*************************************************/
+/*! exports provided: ClubMemberService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubMemberService", function() { return ClubMemberService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment.prod */ "./src/environments/environment.prod.ts");
+
+
+
+
+var ClubMemberService = /** @class */ (function () {
+    function ClubMemberService(http) {
+        this.http = http;
+    }
+    ClubMemberService.prototype.insertClubMember = function (clubMember) {
+        return this.http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/clubmembers/save", clubMember);
+    };
+    ClubMemberService.prototype.deleteClubMember = function (clubMember) {
+        this.http.delete(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + "/clubmembers/delete");
+    };
+    ClubMemberService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ClubMemberService);
+    return ClubMemberService;
 }());
 
 
@@ -613,7 +798,7 @@ __webpack_require__.r(__webpack_exports__);
 // this is used to commnunicate with JAVA app
 var environment = {
     production: true,
-    baseUrl: "http://localhost:8080/"
+    baseUrl: "http://localhost:8080"
 };
 
 

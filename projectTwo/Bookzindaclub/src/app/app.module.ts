@@ -20,6 +20,8 @@ import { ClubServiceService } from './services/club-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserPostComponent } from './components/user-post/user-post.component';
 import { ClubLookupComponent } from './components/club-lookup/club-lookup.component';
+import { BookLookupComponent } from './components/book-lookup/book-lookup.component';
+import { ClubMemberService } from './services/club-member.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ClubLookupComponent } from './components/club-lookup/club-lookup.compon
     ClubCreationFormComponent,
     NavbarComponent,
     UserPostComponent,
-    ClubLookupComponent
+    ClubLookupComponent,
+    BookLookupComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { ClubLookupComponent } from './components/club-lookup/club-lookup.compon
     MatButtonModule,
     MatIconModule
   ],
-  providers: [ClubServiceService],
+  providers: [ClubServiceService, ClubMemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
