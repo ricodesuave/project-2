@@ -1,6 +1,14 @@
-<mat-action-list>
-  <button mat-list-item *ngFor="let club of clubs">
-      <mat-icon mat-list-icon>group</mat-icon>
-      <h3 mat-line>{{club.clubName}}</h3>
-  </button>
-</mat-action-list>>
+<mat-card>
+
+  <mat-action-list>
+      <button mat-list-item (click)="creatingClub($event)">
+          <mat-icon mat-list-icon style="color:rgb(50, 161, 50)">group_add</mat-icon>
+          <h3 mat-line>Create New Club</h3>
+      </button>
+    <button mat-list-item *ngFor="let club of clubs" (click)="selectingClub($event, club)">
+        <mat-icon mat-list-icon>group</mat-icon>
+        <h3 mat-line>{{club.clubName}}</h3>
+    </button>
+  </mat-action-list>
+
+</mat-card>

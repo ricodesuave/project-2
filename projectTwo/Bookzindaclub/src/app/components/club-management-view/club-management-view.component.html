@@ -1,1 +1,15 @@
-<app-club-list></app-club-list>
+<br>
+<div class="row" style="margin:auto; width:90%; color:rgba(56, 53, 53, 0.5)">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4">
+                <app-club-list (selectedClub)="setSelectedClub($event)" (newClub)="displayCreationForm($event)"></app-club-list>
+            </div>
+            <div class="col-8">
+                <app-club-meeting-table [selectedClub]="club" *ngIf="displayMeetings"></app-club-meeting-table>
+                <app-club-creation-form *ngIf="displayForm"></app-club-creation-form>
+            </div>
+        </div>
+    </div>
+</div>
+
