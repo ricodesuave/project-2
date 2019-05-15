@@ -8,6 +8,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { BookLookupComponent } from './components/book-lookup/book-lookup.component';
 import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
 import { ClubLookupComponent } from './components/club-lookup/club-lookup.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'reviews', component: UserPostComponent},
   {path: 'books', component: BookLookupComponent},
   {path: 'lookup', component: ClubLookupComponent},
-  {path: 'manage', component: ClubManagementViewComponent}
+  {path: 'manage', component: ClubManagementViewComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

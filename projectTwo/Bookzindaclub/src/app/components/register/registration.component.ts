@@ -14,7 +14,7 @@ import { MaterialModule } from '../../material/material.module';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+  hide = true;
   registerForm: FormGroup;
   loading = false;
   submitted = false;

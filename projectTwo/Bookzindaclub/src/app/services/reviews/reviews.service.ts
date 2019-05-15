@@ -11,11 +11,11 @@ export class ReviewsService {
   constructor( private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Review[]>(`${envir.baseUrl}/review/reviews`);
+    return this.http.get<any[]>(`${envir.baseUrl}/review/reviews`);
   }
 
   getById() {
-    return this.http.get<Review>(`${envir.baseUrl}/review/review`);
+    return this.http.get<any>(`${envir.baseUrl}/review/review`);
   }
 
   save( review: Review ) {

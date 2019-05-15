@@ -35,6 +35,7 @@
         <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="settingsDropdown">
           <a *ngIf="!currentUser" class="dropdown-item" routerLink="/login">Login</a>
           <a *ngIf="!currentUser" class="dropdown-item" routerLink="/register">Register</a>
+          <a *ngIf="currentUser" class="dropdown-item" routerLink="/profile">Profile</a>
           <a *ngIf="currentUser" class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>

@@ -13,4 +13,6 @@ public interface ClubMemberService {
     void newClubMember(ClubMember clubMember);
     void deleteClubMember(ClubMember clubMember);
     void updateClubMember(ClubMember clubMember);
+
+    ClubMember findAllByClubMemberIdentity_UserIdEquals(int id);
 }

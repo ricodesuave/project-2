@@ -1,28 +1,13 @@
-<!-- <div class="divCard">
-  <ul>
-      <li *ngFor="let review of reviews" class="post-card">
-          <mat-card class="card">
-              <mat-card-header>
-                <mat-card-title>{{ review.bookId }}</mat-card-title>
-                <mat-card-subtitle>{{ review.reviewDate }}</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>{{ review.reviewDescription }}</p>
-              </mat-card-content>
-            </mat-card>
-      </li>
-    </ul>
-</div> -->
 <div class="divCard">
   <ul>
-      <li class="post-card">
+      <li *ngFor="let meeting of meetings" class="post-card">
           <mat-card class="card">
               <mat-card-header>
-                <mat-card-title>test</mat-card-title>
-                <mat-card-subtitle>test</mat-card-subtitle>
+                <mat-card-title>{{ meeting.clubName }}</mat-card-title>
+                <mat-card-subtitle>{{ meeting.Location }} {{ meeting.date }}</mat-card-subtitle>
               </mat-card-header>
               <mat-card-content>
-                <p>test</p>
+                <p>{{ meeting.description }}</p>
               </mat-card-content>
             </mat-card>
       </li>

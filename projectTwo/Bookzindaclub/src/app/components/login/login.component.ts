@@ -13,7 +13,7 @@ import { AuthService } from '../../services/login/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  hide = true;
   loginForm: FormGroup;
   loading = false;
   submitted = false;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReviewsService } from 'src/app/services/reviews/reviews.service';
-import { Review } from 'src/app/models/review';
+import { ReviewTransfer } from 'src/app/models/review-transfer';
 
 @Component({
   selector: 'app-user-post',
@@ -9,11 +9,13 @@ import { Review } from 'src/app/models/review';
 })
 export class UserPostComponent implements OnInit {
 
-  reviews: Review[];
+  reviews: ReviewTransfer[];
+
   constructor(private reviewService: ReviewsService) { }
 
   ngOnInit() {
     this.reviewService.getAll().subscribe(data => {
+      console.log(data);
       this.reviews = data;
     });
   }

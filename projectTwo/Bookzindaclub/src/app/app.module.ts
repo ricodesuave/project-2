@@ -36,6 +36,7 @@ import { BookLookupComponent } from './components/book-lookup/book-lookup.compon
 import { ClubMemberService } from './services/club-member.service';
 import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
 import { ClubListComponent } from './components/club-list/club-list.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ClubListComponent } from './components/club-list/club-list.component';
     MeetingPostComponent,
     BookLookupComponent,
     ClubManagementViewComponent,
-    ClubListComponent
+    ClubListComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
