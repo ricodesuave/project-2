@@ -2,6 +2,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Club } from 'src/app/models/club';
 import { ClubServiceService } from 'src/app/services/club-service.service';
 import { ClubMeeting } from 'src/app/models/club-meeting';
+import { Subscription } from 'rxjs';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/login/auth.service';
 
 
 @Component({
@@ -15,10 +18,17 @@ export class ClubListComponent implements OnInit {
   @Output() selectedClub: EventEmitter<Club> = new EventEmitter<Club>();
   @Output() newClub: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor( private clubService: ClubServiceService ) { }
+  currentUser: User;
+  currentUserSub: Subscription;
+
+  constructor( private clubService: ClubServiceService, private authService: AuthService ) {
+    this.currentUserSub = this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+   }
 
   ngOnInit() {
-    this.clubService.findAllFromUser(9001).subscribe(data => {
+    this.clubService.findAllFromUser(this.currentUser.userId).subscribe(data => {
       this.clubs = data;
     });
   }
