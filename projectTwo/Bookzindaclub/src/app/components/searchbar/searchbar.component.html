@@ -1,0 +1,9 @@
+<span id="search-container">
+  <form [formGroup]="searchFG">
+  <mat-form-field>
+      <input matInput type="text" name="searchval" placeholder="Input" formControlName="searchval">
+      
+  </mat-form-field>
+  <span><button mat-raised-button color="primary" type="submit" (click)="Searchfxn()"> Search </button></span>
+  </form>
+</span>

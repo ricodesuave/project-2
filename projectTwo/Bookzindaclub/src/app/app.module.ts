@@ -36,6 +36,8 @@ import { BookLookupComponent } from './components/book-lookup/book-lookup.compon
 import { ClubMemberService } from './services/club-member.service';
 import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
 import { ClubListComponent } from './components/club-list/club-list.component';
+import { ApibooksComponent } from './components/apibooks/apibooks.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ClubListComponent } from './components/club-list/club-list.component';
     MeetingPostComponent,
     BookLookupComponent,
     ClubManagementViewComponent,
-    ClubListComponent
+    ClubListComponent,
+    ApibooksComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { ClubListComponent } from './components/club-list/club-list.component';
     MatIconModule,
     NgbModule,
     MaterialModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
   providers: [ReviewsService, UserService, ClubServiceService, ClubMemberService],
   bootstrap: [AppComponent]

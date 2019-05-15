@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <table>
     <thead>
       <tr>
@@ -19,5 +19,45 @@
         </td>
       </tr>
     </tbody>
+  </table> -->
+  <div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <table mat-table [dataSource]="store">
+    <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+    </ng-container>
+    <ng-container matColumnDef="clubName">
+      <th mat-header-cell *matHeaderCellDef> Club Name </th>
+      <td mat-cell *matCellDef= "let element"> {{element.clubName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="clubDescription">
+      <th mat-header-cell *matHeaderCellDef> Club Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.clubDescription}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="owner">
+      <th mat-header-cell *matHeaderCellDef> Owner </th>
+      <td mat-cell *matCellDef="let element"> {{element.owner.firstName}} {{element.owner.lastName}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
   </table>
-</div>
+  </div>
+<!-- </div> -->

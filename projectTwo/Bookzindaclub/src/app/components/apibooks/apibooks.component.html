@@ -1,0 +1,23 @@
+<div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <table mat-table [dataSource]="store">
+
+      <ng-container matColumnDef="bookTitle">
+          <th mat-header-cell *matHeaderCellDef> Book Title </th>
+          <td mat-cell *matCellDef= "let element"> {{element.item.title}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bookAuthors">
+          <th mat-header-cell *matHeaderCellDef> Book Authors </th>
+          <td mat-cell *matCellDef= "let element"> {{element.item.author}} </td>
+          <td mat-cell *matCellDef= "let element"> {{element.item.author}} </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

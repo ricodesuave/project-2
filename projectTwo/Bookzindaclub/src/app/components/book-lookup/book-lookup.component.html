@@ -1,12 +1,15 @@
-<div>
-  <table>
-    <thead>
-      <th scope="col">Book Title</th>
-      <th scope="col">Book Author</th>
-      <th scope="col">Options</th>
-    </thead>
-    <tbody id="book-table-body">
-      
-    </tbody>
-  </table>
-</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="All">
+    <app-searchbar></app-searchbar>
+    <app-apibooks></app-apibooks>
+  </mat-tab>
+  <mat-tab label="Read">
+
+  </mat-tab>
+  <mat-tab label="Reading">
+
+  </mat-tab>
+  <mat-tab label="Wish List">
+    
+  </mat-tab>
+</mat-tab-group>

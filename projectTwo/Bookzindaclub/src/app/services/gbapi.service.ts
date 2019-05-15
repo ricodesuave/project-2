@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Book } from '../models/book';
+import { Apibooks } from '../models/apibooks';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class GBAPIService {
 
   constructor(private http: HttpClient) { }
 
-  public loadUp(): Observable<Book[]>{
-    return this.http.get<Book[]>(`https://googleapi`)
+  public loadUp(): Observable<Apibooks[]>{
+    
+    return this.http.get<Apibooks[]>(`https://www.googleapis.com/books/v1/volumes?q=fire&fields=items/volumeInfo(title,authors)`);
   }
 }
