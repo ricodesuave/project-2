@@ -1,26 +1,28 @@
-<h1>Club Creation Form</h1>
-<form [formGroup]="clubFormGroup">
-    <input type="hidden" formControlName="ownerId" value="9001" readonly/>
+<mat-card>
+    <h1>Club Creation Form</h1>
+    <form [formGroup]="clubFormGroup">
+        <input type="hidden" formControlName="ownerId" value="9001" readonly/>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Club Name</mat-label>
-        <input matInput type="text" placeholder="Enter Club Name" [(ngModel)]="value" formControlName="clubName"/>
-        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Club Name</mat-label>
+            <input matInput type="text" placeholder="Enter Club Name" [(ngModel)]="value" formControlName="clubName"/>
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
 
-    <br>
+        <br>
 
-    <mat-form-field appearance="outline">
-        <textarea matInput name="" id="" formControlName="clubDescription"></textarea>
-        <!-- <textarea matInput placeholder="Enter Club Name" formControlName="clubDescription"></textarea> -->
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <textarea matInput name="" id="" formControlName="clubDescription"></textarea>
+            <!-- <textarea matInput placeholder="Enter Club Name" formControlName="clubDescription"></textarea> -->
+        </mat-form-field>
 
-    
-    <div>
-        <button type="button" (click)="createClub()">Create</button>
-    </div>
+        
+        <div>
+            <button type="button" (click)="createClub()">Create</button>
+        </div>
 
-    
-</form>
+        
+    </form>
+</mat-card>

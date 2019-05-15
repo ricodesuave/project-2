@@ -1,0 +1,35 @@
+<!-- <mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create New meeting
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+
+
+  </mat-expansion-panel>
+</mat-accordion> -->
+
+<div *ngFor="let meeting of meetings">
+
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>{{meeting.clubMeetingIdentity.dateTime}}</mat-card-title>
+      <mat-card-subtitle>{{meeting.location}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{meeting.description}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Edit</button>
+      <button mat-stroked-button color="warn">Delete</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <br>
+</div>

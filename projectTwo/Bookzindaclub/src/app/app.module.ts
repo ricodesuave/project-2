@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 import {
@@ -36,6 +38,7 @@ import { BookLookupComponent } from './components/book-lookup/book-lookup.compon
 import { ClubMemberService } from './services/club-member.service';
 import { ClubManagementViewComponent } from './components/club-management-view/club-management-view.component';
 import { ClubListComponent } from './components/club-list/club-list.component';
+import { ClubMeetingTableComponent } from './components/club-meeting-table/club-meeting-table.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,8 @@ import { ClubListComponent } from './components/club-list/club-list.component';
     MeetingPostComponent,
     BookLookupComponent,
     ClubManagementViewComponent,
-    ClubListComponent
+    ClubListComponent,
+    ClubMeetingTableComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { ClubListComponent } from './components/club-list/club-list.component';
     MatIconModule,
     NgbModule,
     MaterialModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [ReviewsService, UserService, ClubServiceService, ClubMemberService],
   bootstrap: [AppComponent]

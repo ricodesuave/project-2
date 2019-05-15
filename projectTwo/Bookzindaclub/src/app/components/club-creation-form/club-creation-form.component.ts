@@ -3,6 +3,8 @@ import { FormGroup, FormControlName, FormControl, Validators } from '@angular/fo
 import { ClubServiceService } from 'src/app/services/club-service.service';
 import { Club } from 'src/app/models/club';
 import { User } from 'src/app/models/user';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/login/auth.service';
 
 @Component({
   selector: 'app-club-creation-form',
@@ -14,8 +16,15 @@ export class ClubCreationFormComponent implements OnInit {
   value = '';
 
   clubFormGroup: FormGroup;
+  currentUser: User;
+  currentUserSub: Subscription;
 
-  constructor(private clubService: ClubServiceService) {}
+  constructor(private clubService: ClubServiceService,private authService: AuthService) {
+    this.currentUserSub = this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
+  
 
   ngOnInit() {
     this.clubFormGroup = new FormGroup({
@@ -26,16 +35,16 @@ export class ClubCreationFormComponent implements OnInit {
   }
 
   createClub() {
-    // const input = {...this.clubFormGroup.value};
-    // console.log(input);
+    const input = {...this.clubFormGroup.value};
+    console.log(input);
     // const testUser: User = new User(9001, 'jose1@gmail.com', '123', 'jose', 'nunez', null);
 
-    // let val: Club = new Club(0, input.clubName, input.clubDescription, testUser);
-    // console.log(val);
+    let val: Club = new Club(0, input.clubName, input.clubDescription, this.currentUser);
+    console.log(val);
 
-    // this.clubService.save(val).subscribe(data => {
-    //   console.log(data);
-    // });
+    this.clubService.save(val).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }
