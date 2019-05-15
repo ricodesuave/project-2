@@ -36,7 +36,7 @@ public class ReviewController {
     @GetMapping("review")
     public Review getById(@RequestParam int userId, @RequestParam int bookId)
     {
-        return reviewService.getById(new ReviewIdentity(userId,bookId));
+        return null;
     }
 
     @GetMapping("reviews")
